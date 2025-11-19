@@ -1,11 +1,195 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Footer from "../components/Footer.astro";
+import ProjectCard from "../components/PorjectsView.astro";
+import InterestsCard from "../components/InterestsCard.astro";
 ---
 
 <Layout>
-	<Welcome />
+  <div class="flex flex-col bg-linear-to-r from-black to-blue-900">
+    <div
+      class="w-full h-screen flex flex-col justify-center items-center text-center"
+    >
+      <p
+        class="bg-linear-to-r from-cyan-500 to-blue-400 bg-clip-text text-3xl md:text-5xl font-extrabold text-transparent drop-shadow-lg drop-shadow-blue-600 pb-2"
+      >
+        Hi,<br />I'm zakkmccrack
+      </p>
+      <p class="border-t-2 border-white/70 text-2xl pt-2 text-center w-1/2"></p>
+      <p
+        class="text-xl md:text-2xl text-center w-fit bg-linear-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent drop-shadow-lg drop-shadow-blue-600 border-t-4"
+      >
+        I do a lot of stuff, but mainly I'm a programmer and full stack
+        developer
+      </p>
+    </div>
+
+    <div
+      class="h-fit w-full flex flex-col pt-5 text-center justify-around text-wrap bg-white/5 border border-white/10 rounded-xl text-slate-200 leading-relaxed backdrop-blur-xl shadow-[0_0_20px_rgba(80,120,255,0.15)]"
+      id="about"
+    >
+      <p
+        class="text-3xl md:text-5xl font-semibold text-slate-100 tracking-wide mb-4"
+      >
+        About Me
+      </p>
+      <div class="flex flex-col w-fit">
+        <p class="w-fit p-6 md:text-left text-center">
+          I’ve always been fond of technology and computer science so I started
+          programming in 2016 and enrolled in a computer science major at the
+          University of Perugia in 2024.<br />I always strive to develop
+          personal projects aside from university assignments whenever I have
+          some free time. All of my projects can be found down below if
+          interested in them.
+          <br /><br />
+
+          You can find all my projects
+          <a
+            href="#projects"
+            class="underline text-blue-300 hover:text-blue-200 transition-colors"
+          >
+            down here
+          </a>
+          if you're interested in them.
+          <br />
+
+          Or you can visit my
+          <a
+            href="https://github.com/zakkmccrack"
+            target="_blank"
+            class="underline text-blue-300 hover:text-blue-200 transition-colors"
+          >
+            GitHub profile
+          </a>.
+          <br />
+
+          You can download my resume
+          <a
+            href="../assets/Zaganelli_Alessandro_2025_CV.pdf"
+            download="Zaganelli_Alessandro_2025_CV.pdf"
+            class="underline text-blue-300 hover:text-blue-200 transition-colors"
+          >
+            here
+          </a>.
+          <br /><br />
+
+          In this site I prefer to talk about my passions rather than just my
+          projects or anything useful for the world of work I've done. My skills
+          are in my resume; this site collects everything that makes me the
+          person I am, what defines me as a human being rather than a corporate
+          asset.
+          <br /><br />
+          So, let's dive into my world.
+        </p>
+        <div class="flex flex-row flex-wrap\ justify-around">
+          <InterestsCard
+            label="Music"
+            desc={`Music has always been my life's companion. Ever since I was given 'Fear of the Dark' and 'American Idiot' at age 6 or 7, I've never stopped expanding my musical horizons.`}
+            link="/music"
+          />
+          <InterestsCard
+            label="Photography"
+            desc="This passion, inherited from my father and uncle, has been with me for years. I currently have a Canon EOS R10 with three different lenses that allow me to capture endless moments."
+            link="/photo"
+          />
+          <InterestsCard
+            label="Reading"
+            desc="I come from a family of avid readers, so in my free time I read a wide variety of books. Perhaps my favorite genre is philosophical literature. I'm not a philosophy student yet, but studying the various philosophical currents has always fascinated me. My favorite author is Albert Camus!"
+            link="/reading"
+          />
+          <InterestsCard
+            label="Science"
+            desc="Physics, mathematics, and astrophysics are my lifelong intellectual companions. The mystery of how the universe works, from quarks to galaxies, fuels my sense of wonder!"
+            link="/science"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="w-full h-fit overflow-hidden flex flex-col justify-around text-center pt-10"
+      id="projects"
+    >
+      <p class="text-3xl text-white">My Projects</p>
+      <p class="text-white">
+        Here are some projects I have worked on over the years. Almost all of
+        them can be found on github
+      </p>
+      <div
+        class="flex w-full flex-col md:flex-row flex-wrap justify-around max-h-125 overflow-hidden"
+        id="parent"
+      >
+        <ProjectCard
+          label="UNICO"
+          desc="UNICO is an advanced platform designed to optimize the use of AI models such as GPT, Gemini or Claude. Designed to always choose the best model for each scenario, customizing and integrating it to meet specific needs."
+          link="https://github.com/unico-it"
+        />
+        <ProjectCard
+          label="Angolo 41"
+          desc="A project developed in React + Tailwind on NextJS for a bar in my city"
+          link="https://angolo41-menu.vercel.app/"
+        />
+        <ProjectCard
+          label="ShiftSaver"
+          desc="Open source Android application to save your work shifts. Implement Android ROOM and save all data locally."
+          link="https://github.com/zakkmccrack/ShiftSaver"
+        />
+        <ProjectCard
+          label="MathSymbols"
+          desc="Have you ever wanted to have all the math symbols on hand while you chat? With this application you will find all the symbols, ready to be copied with a simple click!"
+          link="https://github.com/zakkmccrack/MathSymbolsAndroid"
+        />
+        <ProjectCard
+          label="Shell Script"
+          desc="A little project I made in my free time to customize my ZSH shell. Since years ago when I officially switched to Linux I had difficulty customizing the shell, I wanted to make it open source so that less experienced users can easily understand how the most basic functions of the ZSH shell work"
+          link="https://github.com/zakkmccrack/shellScript"
+        />
+        <ProjectCard
+          label="Car Reservation System"
+          desc="Yeah, this one is just a random project i made years ago in less than a day to reserve the cars for my friend group. It's a great memory afterall..."
+          link="https://github.com/zakkmccrack/random_reservation_system"
+        />
+        <ProjectCard
+          label="GameChecker"
+          desc="Project done for school way back in 2021. It's a social network for video game fans. Nice idea but never developed, but it got me three 10s as a grade for three different subjects"
+          link="https://github.com/zakkmccrack/game-checker"
+        />
+
+        <ProjectCard
+          label="Scalogna Quest"
+          desc="Project made in pure C for the Magnificent Professor Santini 🔥🔥🔥🔥🔥."
+          link="https://github.com/zakkmccrack/C-game-Scalogna_Quest"
+        />
+        <ProjectCard
+          label="C cross road simulator"
+          desc="Another project for university."
+          link="https://github.com/zakkmccrack/sistemi_operativi_laboratorio"
+        />
+      </div>
+      <button
+        id="seeMore"
+        class="text-white mt-5 mb-50 p-3 rounded-2xl border-2 w-fit h-fit mx-auto hover:cursor-pointer"
+      >
+        See more
+      </button>
+    </div>
+
+    <script>
+      const parent = document.getElementById("parent");
+      const btn = document.getElementById("seeMore");
+
+      if (!parent || !btn) {
+        console.warn("parent o button non trovato");
+      } else {
+        btn.addEventListener("click", () => {
+          parent.classList.toggle("max-h-32");
+          parent.classList.toggle("max-h-fit");
+        });
+      }
+    </script>
+
+    <Footer />
+  </div>
 </Layout>
