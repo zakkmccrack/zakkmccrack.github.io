@@ -27,7 +27,7 @@ import InterestsCard from "../components/InterestsCard.astro";
     </div>
 
     <div
-      class="h-fit w-full flex flex-col pt-5 text-center justify-around text-wrap bg-white/5 border border-white/10 rounded-xl text-slate-200 leading-relaxed backdrop-blur-xl shadow-[0_0_20px_rgba(80,120,255,0.15)]"
+      class="h-fit w-full flex flex-col pt-5 text-center justify-around text-wrap bg-white/5 border border-white/10 text-slate-200 leading-relaxed backdrop-blur-xl shadow-[0_0_20px_rgba(80,120,255,0.15)]"
       id="about"
     >
       <p
@@ -88,21 +88,25 @@ import InterestsCard from "../components/InterestsCard.astro";
             label="Music"
             desc={`Music has always been my life's companion. Ever since I was given 'Fear of the Dark' and 'American Idiot' at age 6 or 7, I've never stopped expanding my musical horizons.`}
             link="/music"
+            category="music"
           />
           <InterestsCard
             label="Photography"
             desc="This passion, inherited from my father and uncle, has been with me for years. I currently have a Canon EOS R10 with three different lenses that allow me to capture endless moments."
             link="/photo"
+            category="photography"
           />
           <InterestsCard
             label="Reading"
             desc="I come from a family of avid readers, so in my free time I read a wide variety of books. Perhaps my favorite genre is philosophical literature. I'm not a philosophy student yet, but studying the various philosophical currents has always fascinated me. My favorite author is Albert Camus!"
             link="/reading"
+            category="reading"
           />
           <InterestsCard
-            label="Science"
+            label="Math and Physics"
             desc="Physics, mathematics, and astrophysics are my lifelong intellectual companions. The mystery of how the universe works, from quarks to galaxies, fuels my sense of wonder!"
             link="/science"
+            category="science"
           />
         </div>
       </div>
@@ -118,7 +122,7 @@ import InterestsCard from "../components/InterestsCard.astro";
         them can be found on github
       </p>
       <div
-        class="flex w-full flex-col md:flex-row flex-wrap justify-around max-h-125 overflow-hidden"
+        class="flex w-full flex-col md:flex-row flex-wrap justify-around max-h-125 overflow-hidden border-b-2"
         id="parent"
       >
         <ProjectCard
