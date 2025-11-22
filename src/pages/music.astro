@@ -1,0 +1,185 @@
+---
+import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
+
+import Concerts from "../components/Concerts.astro";
+---
+
+<Layout>
+  <div
+    class="min-h-screen w-fit flex flex-col items-center justify-start bg-linear-to-br from-[#171717] to-[#2d2d2d] text-[#f2f2f2] p-4 gap-6"
+  >
+    <div class="flex flex-col items-center gap-2">
+      <p class="text-5xl font-bold tracking-wide flex items-center gap-3">
+        Music
+      </p>
+    </div>
+
+    <div class="w-full text-lg leading-relaxed space-y-4 p-8 backdrop-blur-sm">
+      <p class="text-2xl opacity-80 italic">My story with music</p>
+      <p>
+        Music has always been my life's companion. The first songs I remember
+        listening to, on an old MP3 of my father's, were
+        <strong>Cup of Wonder</strong> by Jethro Tull, not ironically followed by
+        <strong>Crazy Horse</strong> by Black Label Society. Some time later I was
+        given <strong>American Idiot</strong> by Green Day and <strong
+          >Fear of The Dark</strong
+        > by Iron Maiden.
+      </p>
+
+      <p>
+        These two albums changed my life, making me feel the strength that music
+        can have on human beings. When I reached middle school, I realized that
+        what I thought was a personal vision of music was actually nearly
+        universal. This made me fall even more in love with music and pushed me
+        to understand its impact on the world and society throughout history.
+      </p>
+
+      <p>
+        For example, did you know that the September 11, 2001 attack, My
+        Chemical Romance, the release of <em>Twilight</em> and <em
+          >50 Shades of Gray</em
+        >, and even the deterioration of Ellen DeGeneres' public image are all
+        somehow connected?!
+      </p>
+
+      <p>
+        During lockdown in my second year of high school, after watching <em
+          >School of Rock</em
+        > for perhaps the fifth time, I decided to start a huge project based on
+        the genre map drawn on the classroom blackboard in the film. I wrote out
+        the entire evolution of almost all musical genres, from the earliest blues
+        to the most experimental genres of today.
+      </p>
+
+      <p>
+        For now this scheme exists only on paper—about twenty pages of a
+        notebook—but I'm working on making it digital and publishing it
+        somewhere.
+      </p>
+
+      <p>
+        For years I've continued nurturing this passion, discovering new artists
+        without prejudice toward genre or popularity. I've also been to many
+        concerts, from wildly different artists, where I lived unique
+        experiences and met spectacular people who opened my mind.
+      </p>
+    </div>
+
+    <div class="w-full">
+      <p class="text-2xl opacity-80 italic text-center pb-5">My experiences</p>
+      <div class="grid grid-cols-3 gap-5 w-full">
+        <Concerts
+          title="Bay Fest 2019"
+          bands={["The Story So Far", "Dead Kennedys", "Offspring"]}
+          style="bg-gradient-to-r from-amber-300 via-orange-600 to-black"
+        />
+        <Concerts
+          title="Firenze Rock 2022"
+          bands={["Green Day", "Weezer"]}
+          style="bg-gradient-to-tr from-green-400 via-cyan-400 to-pink-400"
+        />
+        <Concerts
+          title="Does This Look All Killer No Filler Tour 2022"
+          bands={["Simple Plan", "Sum 41"]}
+          style="bg-gradient-to-tr from-yellow-400 via-red-600 to-black"
+        />
+        <Concerts
+          title="The Return of the Gods 2023"
+          bands={["Pantera e Zakk Wylde", "Kreation"]}
+          style="bg-gradient-to-tl from-slate-700 via-slate-700 to-red-500"
+        />
+        <Concerts
+          title="Cringe"
+          bands={["Rosa Chemical"]}
+          style="bg-gradient-to-tl from-pink-400 via-purple-500 to-black"
+        />
+        <Concerts
+          title="Milano 2024"
+          bands={["Set It Off", "I Prevail"]}
+          style="bg-gradient-to-tr from-red-500 via-black to-cyan-900"
+        />
+        <Concerts
+          title="I Days 2024"
+          bands={["Nothing But Thieves", "Green Day"]}
+          style="bg-gradient-to-tr from-green-400 via-neutral-900 to-black"
+        />
+        <Concerts
+          title="Fuck Your Clique 2024"
+          bands={["Siso", "Fuck Your Clique"]}
+          style="bg-gradient-to-tr from-green-400 via-neutral-900 to-black"
+        />
+        <Concerts
+          title="Firenze Rock 2025 — Day 1"
+          bands={[
+            "The Warning",
+            "Rival Sons",
+            "Falling In Reverse",
+            "Guns N' Roses",
+          ]}
+          style="bg-gradient-to-bl from-red-600 via-yellow-400 to-black"
+        />
+        <Concerts
+          title="Firenze Rock 2025 — Day 2"
+          bands={["Public Enemy", "Korn"]}
+          style="bg-gradient-to-tr from-slate-950 via-green-400 to-gray-600"
+        />
+        <Concerts
+          title="Firenze Rock 2025 — Day 3"
+          bands={["Shame", "Weezer", "Green Day"]}
+          style="bg-gradient-to-tr from-blue-400 via-green-400 to-yellow-400"
+        />
+        <Concerts
+          title="Back to the Beginning 2025"
+          bands={[
+            "Mastodont",
+            "Rival Sons",
+            "Halestorm",
+            "Tool",
+            "Slayer",
+            "Metallica",
+            "Guns N' Roses",
+            "Black Sabbath",
+            "Ozzy Osbourne",
+            "Pantera",
+            "Gojira",
+            "Alice In Chains",
+            "Lamb of God",
+            "Anthrax",
+          ]}
+          style="bg-gradient-to-tr from-black  to-purple-600"
+        />
+        <Concerts
+          title="Cesena 2025"
+          bands={["Giorgio Canali", "The White Buffalo"]}
+          style="bg-gradient-to-tr from-orange-300 via-red-800 to-yellow-900"
+        />
+        <Concerts
+          title="Warehouse 2025"
+          bands={[
+            "Plants PLay",
+            "Neoprimitivi",
+            "Fuck Your Clique",
+            "Psicologi",
+          ]}
+          style="bg-gradient-to-tr from-purple-600 via-cyan-400 to-black"
+        />
+        <Concerts
+          title="11/10/2025"
+          bands={["Naska"]}
+          style="bg-gradient-to-tl from-red-700  to-black"
+        />
+        <Concerts
+          title="7/11/2025 — Urban"
+          bands={["Mezzosangue"]}
+          style="bg-gradient-to-tr from-red-800 via-black to-gray-800"
+        />
+        <Concerts
+          title="21/11/2025 — Urban"
+          bands={["GattoToro"]}
+          style="bg-gradient-to-tr from-orange-600 via-purple-600 to-black"
+        />
+      </div>
+    </div>
+  </div>
+</Layout>

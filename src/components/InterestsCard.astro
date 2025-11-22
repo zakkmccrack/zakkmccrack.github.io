@@ -1,5 +1,5 @@
 ---
-const { label, desc, link, category } = Astro.props as {
+const { label, link, category } = Astro.props as {
   label: string;
   desc: string;
   link: string;
@@ -52,7 +52,7 @@ const style = styles[category] ?? styles.science;
   <a
     href={link}
     class={`group relative block overflow-hidden rounded-2xl border-2 border-white/10 
-    bg-linear-to-br ${style.gradient}
+    bg-linear-to-br w-full ${style.gradient}
     ${style.pattern}
     backdrop-blur-xl p-6
     transition-all duration-500 hover:-translate-y-1
@@ -69,12 +69,6 @@ const style = styles[category] ?? styles.science;
     >
       {label}
     </h2>
-
-    <p
-      class="relative mt-2 text-sm text-white/80 group-hover:text-white transition-colors"
-    >
-      {desc}
-    </p>
     <div
       class="flex items-center gap-2 mt-2 text-white/70 group-hover:text-white transition-all"
     >
