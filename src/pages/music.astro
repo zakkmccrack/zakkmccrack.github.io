@@ -3,6 +3,7 @@ import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 
 import Concerts from "../components/Concerts.astro";
+import BTTB from "../components/BTTB.astro";
 ---
 
 <Layout>
@@ -68,7 +69,27 @@ import Concerts from "../components/Concerts.astro";
 
     <div class="w-full">
       <p class="text-2xl opacity-80 italic text-center pb-5">My experiences</p>
-      <div class="grid grid-cols-3 gap-5 w-full">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 w-full">
+        <BTTB
+          title="Back to the Beginning 2025"
+          bands={[
+            "Mastodont",
+            "Rival Sons",
+            "Halestorm",
+            "Tool",
+            "Slayer",
+            "Metallica",
+            "Guns N' Roses",
+            "Black Sabbath",
+            "Ozzy Osbourne",
+            "Pantera",
+            "Gojira",
+            "Alice In Chains",
+            "Lamb of God",
+            "Anthrax",
+          ]}
+          style="bg-gradient-to-tr from-black  to-purple-600 col-span-1 md:col-span-3"
+        />
         <Concerts
           title="Bay Fest 2019"
           bands={["The Story So Far", "Dead Kennedys", "Offspring"]}
@@ -128,26 +149,6 @@ import Concerts from "../components/Concerts.astro";
           title="Firenze Rock 2025 — Day 3"
           bands={["Shame", "Weezer", "Green Day"]}
           style="bg-gradient-to-tr from-blue-400 via-green-400 to-yellow-400"
-        />
-        <Concerts
-          title="Back to the Beginning 2025"
-          bands={[
-            "Mastodont",
-            "Rival Sons",
-            "Halestorm",
-            "Tool",
-            "Slayer",
-            "Metallica",
-            "Guns N' Roses",
-            "Black Sabbath",
-            "Ozzy Osbourne",
-            "Pantera",
-            "Gojira",
-            "Alice In Chains",
-            "Lamb of God",
-            "Anthrax",
-          ]}
-          style="bg-gradient-to-tr from-black  to-purple-600"
         />
         <Concerts
           title="Cesena 2025"
