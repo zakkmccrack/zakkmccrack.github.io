@@ -2,12 +2,12 @@
 const { label, desc, link } = Astro.props;
 ---
 
-<div class="w-full md:w-1/2 flex flex-row m-2 p-5 content-center mx-auto">
+<div class="w-full md:w-full flex flex-row m-2 p-5 content-center mx-auto">
   <a
     href={link}
     target="_blank"
     class="group relative block overflow-hidden rounded-2xl
-    border-2 border-white/10 
+    border-2 border-white/10
     bg-linear-to-br from-[#030b3a]/60 to-[#0a1a4f]/60
     backdrop-blur-2xl p-6
     shadow-[0_0_25px_rgba(80,120,255,0.25)]
@@ -24,7 +24,7 @@ const { label, desc, link } = Astro.props;
 
     <h2
       class="relative mt-5 text-3xl font-extrabold
-      text-transparent bg-clip-text 
+      text-transparent bg-clip-text
       bg-linear-to-r from-[#7aa4ff] via-[#b0d4ff] to-[#dff8ff]
       tracking-wide transition-all duration-300
       group-hover:tracking-wider group-hover:blur-[0.3px]"
@@ -38,7 +38,15 @@ const { label, desc, link } = Astro.props;
     >
       {desc}
     </p>
-
+    <div
+      class="flex items-center gap-2 mt-2 text-white/70 group-hover:text-white transition-all"
+    >
+      <span
+        class="opacity-40 group-hover:opacity-100 transition-all translate-x-0 group-hover:translate-x-1"
+      >
+        ↗
+      </span>
+    </div>
     <div
       class="pointer-events-none absolute inset-0 opacity-20
       bg-[linear-gradient(to_bottom,rgba(255,255,255,0.08)_1px,transparent_1px)]
