@@ -2,7 +2,6 @@
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 
-import Footer from "../components/Footer.astro";
 import ProjectCard from "../components/PorjectsView.astro";
 import InterestsCard from "../components/InterestsCard.astro";
 import { Icon } from "astro-icon/components";
@@ -33,7 +32,7 @@ import { Icon } from "astro-icon/components";
     </div>
 
     <div
-      class="h-fit w-full flex flex-col pt-5 text-center justify-around text-wrap bg-white/5 border border-white/10 text-slate-200 leading-relaxed backdrop-blur-xl shadow-[0_0_20px_rgba(80,120,255,0.15)]"
+      class="h-fit w-full flex flex-col pt-5 text-center mx-auto justify-around text-wrap bg-white/5 border border-white/10 text-slate-200 leading-relaxed backdrop-blur-xl shadow-[0_0_20px_rgba(80,120,255,0.15)]"
       id="about"
     >
       <p
@@ -41,7 +40,7 @@ import { Icon } from "astro-icon/components";
       >
         About Me
       </p>
-      <div class="flex flex-col w-fit">
+      <div class="flex flex-col w-fit mx-auto">
         <p class="w-fit p-6 md:text-left text-center">
           I’ve always been fond of technology and computer science so I started
           programming in 2016 and enrolled in a computer science major at the
@@ -88,7 +87,7 @@ import { Icon } from "astro-icon/components";
           <br /><br />
           So, let's dive into my world.
         </p>
-        <div class="flex flex-row flex-wrap\ justify-around">
+        <div class="flex flex-row flex-wrap\ justify-around mx-auto">
           <InterestsCard
             label="Coding"
             link="/coding"
@@ -129,7 +128,7 @@ import { Icon } from "astro-icon/components";
         them can be found on github
       </p>
       <div
-        class="flex w-full flex-col md:flex-row flex-wrap justify-around max-h-125 overflow-hidden border-b-2"
+        class="grid grid-cols-1 md:grid-cols-3 w-full max-h-125 overflow-hidden border-b-2"
         id="parent"
       >
         <ProjectCard
@@ -200,7 +199,5 @@ import { Icon } from "astro-icon/components";
         });
       }
     </script>
-
-    <Footer />
   </div>
 </Layout>
