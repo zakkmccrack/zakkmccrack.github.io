@@ -1,0 +1,14 @@
+---
+import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
+
+import type { Post } from "../lib/types";
+
+const posts = Object.values(
+  import.meta.glob("./posts/computer_science/*.md", { eager: true })
+) as unknown as Post[];
+---
+
+<Layout>
+  <div></div>
+</Layout>
