@@ -1,10 +1,18 @@
 ---
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
+
+import type { Post } from "../lib/types";
+
+const posts = Object.values(
+  import.meta.glob("./posts/computer_science/*.md", { eager: true })
+) as unknown as Post[];
 ---
 
 <Layout>
-  <div class="bg-linear-to-br from-[#1a1a1a] to-[#333] min-h-screen">
+  <div
+    class="bg-linear-to-br from-[#1a1a1a] to-[#333] min-h-screen selection:text-black selection:bg-white"
+  >
     <div
       class="w-full h-fit flex flex-col bg-[url(../images/image3.png)] justify-center items-center text-center"
     >
@@ -19,7 +27,7 @@ import Layout from "../layouts/Layout.astro";
           class="bg-black/70 text-green-400 font-mono p-4 rounded-lg shadow-xl w-[90%] max-w-xl text-left animate-pulse-slow"
         >
           <p class="text-sm">~> whoami</p>
-          <p class="text-sm">→ full-stack dev</p>
+          <p class="text-sm">full-stack dev</p>
           <p class="text-sm">~></p>
           <p class="text-sm">~> cat current_stack.json</p>
           <p class="text-sm overflow-x-auto text-wrap">
@@ -42,10 +50,30 @@ import Layout from "../layouts/Layout.astro";
           </p>
         </div>
       </div>
-
       <div
         class="w-full text-lg leading-relaxed space-y-6 p-8 text-gray-200 max-w-4xl"
       >
+        <hr class="border-gray-600" />
+        <section class="w-full max-w-5xl mt-4">
+          <h2 class="text-3xl font-semibold italic text-center mb-6 opacity-90">
+            Blog & Insights
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {
+              posts.map((post) => (
+                <a href={post.url}>
+                  <div class="bg-black/70 text-green-400 font-mono p-4 rounded-lg shadow-md hover:shadow-2xl transition-shadow duration-300 cursor-pointer">
+                    <h3 class="text-xl font-bold mb-2">
+                      {post.frontmatter.title}
+                    </h3>
+                    <p class="text-sm opacity-75">{post.frontmatter.desc}</p>
+                  </div>
+                </a>
+              ))
+            }
+          </div>
+        </section>
         <hr class="border-gray-600" />
 
         <div class="font-mono text-sm text-green-300 mb-2">
@@ -137,16 +165,16 @@ import Layout from "../layouts/Layout.astro";
           //~> cat unico.ts
         </div>
         <p>
-          One of the largest projects I've ever worked with my friends on was UNICO. The idea
-          was to implement an AI management system in companies, managed by our
-          fine-tuned model based on BERT. This project gave me a wealth of
-          experience and gave me the opportunity to enter the world of IT
-          companies for the first time, introducing me to various IT companies
-          in our region. Unfortunately, due to university and personal reasons,
-          this project was temporarily shelved, as we had reached a point where
-          we needed to start "selling" the product and presenting ourselves to
-          companies. This was quite difficult for a group made up entirely of IT
-          professionals with no sales background.
+          One of the largest projects I've ever worked with my friends on was
+          UNICO. The idea was to implement an AI management system in companies,
+          managed by our fine-tuned model based on BERT. This project gave me a
+          wealth of experience and gave me the opportunity to enter the world of
+          IT companies for the first time, introducing me to various IT
+          companies in our region. Unfortunately, due to university and personal
+          reasons, this project was temporarily shelved, as we had reached a
+          point where we needed to start "selling" the product and presenting
+          ourselves to companies. This was quite difficult for a group made up
+          entirely of IT professionals with no sales background.
         </p>
         <hr class="border-gray-600" />
       </div>

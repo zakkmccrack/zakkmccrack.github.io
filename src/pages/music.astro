@@ -4,11 +4,16 @@ import Layout from "../layouts/Layout.astro";
 
 import Concerts from "../components/Concerts.astro";
 import BTTB from "../components/BTTB.astro";
+import type { Post } from "../lib/types";
+
+const posts = Object.values(
+  import.meta.glob("./posts/music/*.md", { eager: true })
+) as unknown as Post[];
 ---
 
 <Layout>
   <div
-    class="min-h-screen w-fit flex flex-col items-center justify-start bg-linear-to-br from-[#171717] to-[#2d2d2d] text-[#f2f2f2] p-4 gap-6"
+    class="min-h-screen w-fit flex flex-col items-center justify-start bg-linear-to-br from-[#171717] to-[#2d2d2d] text-[#f2f2f2] p-4 gap-6 selection:text-black selection:bg-amber-300"
   >
     <div class="flex flex-col items-center gap-2">
       <p class="text-5xl font-bold tracking-wide flex items-center gap-3">
@@ -66,6 +71,24 @@ import BTTB from "../components/BTTB.astro";
         experiences and met spectacular people who opened my mind.
       </p>
     </div>
+    <section class="w-full max-w-5xl mt-4">
+      <h2 class="text-3xl font-semibold italic text-center mb-6 opacity-90">
+        Blog & Insights
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+          posts.map((post) => (
+            <a href={post.url}>
+              <div class="p-6 rounded-xl bg-white/5 backdrop-blur-lg shadow-md hover:shadow-2xl transition-shadow duration-300 cursor-pointer">
+                <h3 class="text-xl font-bold mb-2">{post.frontmatter.title}</h3>
+                <p class="text-sm opacity-75">{post.frontmatter.desc}</p>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </section>
 
     <div class="w-full">
       <p class="text-2xl opacity-80 italic text-center pb-5">My experiences</p>
