@@ -9,7 +9,7 @@ import { Icon } from "astro-icon/components";
 
 <Layout>
   <div
-    class="flex flex-col bg-linear-180 from-50% bg-[url(../images/dddepth-065.svg)] items-center text-center bg-contain"
+    class="flex flex-col bg-linear-180 from-50% bg-[url(../images/dddepth-065.svg)] items-center text-center bg-contain h-fit"
   >
     <div
       class="w-full h-screen flex flex-col justify-center items-center text-center bg-cover"
@@ -112,7 +112,7 @@ import { Icon } from "astro-icon/components";
     </div>
 
     <div
-      class="w-full h-screen overflow-hidden flex flex-col justify-around text-center pt-10"
+      class="w-full h-fit flex flex-col justify-around text-center pt-10"
       id="projects"
     >
       <p class="text-3xl text-white">My Projects</p>
@@ -121,7 +121,7 @@ import { Icon } from "astro-icon/components";
         them can be found on github
       </p>
       <div
-        class="grid grid-cols-1 md:grid-cols-3 w-full max-h-fit overflow-hidden border-b-2"
+        class="grid grid-cols-1 md:grid-cols-3 w-full h-fit border-b-2"
         id="parent"
       >
         <ProjectCard
