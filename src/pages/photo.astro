@@ -10,5 +10,44 @@ const posts = Object.values(
 ---
 
 <Layout>
-  <div></div>
+  <div
+    class="flex flex-col h-screen text-center bg-linear-180 from-50% bg-[url(../images/IMG_9500.jpg)] items-center bg-cover bg-fixed w-full justify-center"
+  >
+    <div
+      class="flex flex-col bg-linear-180 from-50% bg-[url(../images/dddepth-065.svg)] items-center text-center bg-contain h-fit bg-fixed"
+    >
+    </div>
+    <div
+      class="absolute inset-0 bg-[radial-gradient(circle,rgba(0,0,0,0.8),transparent_70%)] blur-3xl"
+    >
+    </div>
+
+    <div class="relative z-10">
+      <h1 class="text-5xl font-bold text-white tracking-wide">
+        La mia fotografia
+      </h1>
+      <p class="mt-4 text-lg opacity-70 text-teal-50">
+        Un viaggio tra luce, vuoto e meraviglia.
+      </p>
+    </div>
+  </div>
+  <div
+    class="max-w-7xl mx-auto px-4 py-20 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+  >
+    <div class="group relative overflow-hidden rounded-xl shadow-lg bg-white/5">
+      <img
+        src="/photo1.jpg"
+        class="object-cover w-full h-72 group-hover:scale-105 transition"
+      />
+    </div>
+    ...
+  </div>
+  <div class="relative py-24">
+    <div
+      class="absolute inset-0
+      bg-[radial-gradient(circle_at_50%_80%,rgba(255,138,226,0.10),transparent_70%)]
+      blur-3xl"
+    >
+    </div>
+  </div>
 </Layout>
