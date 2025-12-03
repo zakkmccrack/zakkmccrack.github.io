@@ -1,8 +1,12 @@
 ---
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
-
 import type { Post } from "../lib/types";
+
+const background = ["IMG_9852.jpg", "IMG_9500.jpg", "IMG_8003.jpg", "IMG_9868.jpg"];
+
+var img = (Math.floor(Math.random() * ((background.length) - 0) + 0));
+const image = "bg-[url(/images/" + background[img] + ")]";
 
 const posts = Object.values(
   import.meta.glob("./posts/computer_science/*.md", { eager: true })
@@ -10,13 +14,9 @@ const posts = Object.values(
 ---
 
 <Layout>
-  <div
-    class="flex flex-col h-screen text-center bg-linear-180 from-50% bg-[url(../images/IMG_9500.jpg)] items-center bg-cover bg-fixed w-full justify-center"
+  <div style={`background-image: url(/images/${background[img]})`}
+    class={`flex flex-col h-screen text-center bg-linear-180 from-50% items-center bg-cover bg-fixed w-full justify-center`}
   >
-    <div
-      class="flex flex-col bg-linear-180 from-50% bg-[url(../images/dddepth-065.svg)] items-center text-center bg-contain h-fit bg-fixed"
-    >
-    </div>
     <div
       class="absolute inset-0 bg-[radial-gradient(circle,rgba(0,0,0,0.8),transparent_70%)] blur-3xl"
     >
@@ -36,7 +36,7 @@ const posts = Object.values(
   >
     <div class="group relative overflow-hidden rounded-xl shadow-lg bg-white/5">
       <img
-        src="/photo1.jpg"
+        src='/images/IMG_9868.jpg'
         class="object-cover w-full h-72 group-hover:scale-105 transition"
       />
     </div>
@@ -49,5 +49,6 @@ const posts = Object.values(
       blur-3xl"
     >
     </div>
+    <script></script>
   </div>
 </Layout>
