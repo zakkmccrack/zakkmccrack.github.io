@@ -1,0 +1,26 @@
+---
+const { title, desc, path } = Astro.props;
+---
+
+<div
+  class="group relative w-full h-fit overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300"
+>
+  <img
+    src={path}
+    alt={title}
+    class="w-full h-fit object-cover transition-transform duration-500 group-hover:scale-110"
+  />
+
+  <div class="inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent">
+    <div class="bottom-0 left-0 right-0 p-6 text-white">
+      <h3
+        class="text-2xl font-bold mb-2 transform transition-transform duration-300 group-hover:translate-y-1"
+      >
+        {title}
+      </h3>
+      <p class="text-sm text-gray-200 opacity-90 leading-relaxed">
+        {desc}
+      </p>
+    </div>
+  </div>
+</div>

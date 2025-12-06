@@ -2,7 +2,7 @@
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 import type { Post } from "../lib/types";
-
+import PhotoArguments from "../components/PhotoArguments.astro";
 const background = [
   "IMG_9852.jpg",
   "IMG_9868.jpg",
@@ -16,14 +16,6 @@ var img = Math.floor(Math.random() * (background.length - 0) + 0);
 const posts = Object.values(
   import.meta.glob("./posts/computer_science/*.md", { eager: true })
 ) as unknown as Post[];
-
-const gallery = [
-  { src: "/images/photo_page/IMG_2064.jpg", title: "Paesaggi" },
-  { src: "/images/photo_page/spazio/IMG_0725.jpg", title: "Spazio" },
-  { src: "/images/photo_page/IMG_9868.jpg", title: "Natura" },
-  { src: "/images/photo_page/motori/IMG_3481.jpg", title: "Motori" },
-  { src: "/images/photo_page/urbex/IMG_0793.jpg", title: "Urbex" },
-];
 ---
 
 <Layout>
@@ -72,7 +64,7 @@ const gallery = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
       <div class="text-center mb-12 sm:mb-16">
         <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-          Portfolio Recente
+          Un'immagine, mille storie
         </h2>
         <div
           class="w-20 h-1 bg-linear-to-r from-transparent via-white to-transparent mx-auto"
@@ -80,70 +72,54 @@ const gallery = [
         </div>
       </div>
 
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
-      >
-        {
-          gallery.map((photo, index) => (
-            <div class="group relative overflow-hidden rounded-lg aspect-square bg-neutral-900 cursor-pointer">
-              <img
-                src={photo.src}
-                alt={photo.title}
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                loading="lazy"
-              />
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+        <PhotoArguments
+          title="Spazio"
+          desc="Mi ha sempre appassionato tantissimo lo spazio. L'immenso... l'infinito... tutto in un portale così piccolo ed insignificante come il nostro cielo. Non ho obbiettivi bestiali, mi accontento di scattare con un 500x Fisso della Tokina abbastanza vecchio e con un 24mm 2.8f Pancake. Ora come ora, mi bastano per lanciare uno sguardo verso stelle e pianeti a distanze inimmaginabili. Quando era in perigeo ed in opposizione sono anche riuscito a fotografare saturno ed i suoi anelli... male, ma si capiva fosse saturno!"
+          path="/images/photo_page/spazio/IMG_0725.jpg"
+        />
+        <PhotoArguments
+          title="Paesaggi"
+          desc="Abbastanza banale direi. Ma fotografare certi momenti per me è una cosa che va oltre il 'catturare delle belle scene'. Per me è un modo per lasciare impressi momenti che con il tempo uno finisce per lasciare accantonati in spazi remoti della memoria. Ogni foto di questo tipo che ho fatto nel corso del tempo, porta dietro tanti ricordi, tante sensazioni. A volte mi sembra come riviverli..."
+          path="/images/photo_page/IMG_2064.jpg"
+        />
+        <PhotoArguments
+          title="Natura"
+          desc="Dalla grandezza dell'universo passiamo alla piccolezza della nostra piccola terra. Anni fa iniziai a perdermi nei boschi quando mi veniva voglia di abbandonare tutte le preoccupazioni e pensieri. Quanto mi è stata accanto la natura solo io e le lo sappiamo. Volevo dedicarle almeno questo piccolo spazio :)"
+          path="/images/photo_page/IMG_9868.jpg"
+        />
+        <PhotoArguments
+          title="Motori"
+          desc="Nel 2021 quando ereditai la mia prima macchina fotografica entry level semi professionale decisi di iniziare a far qualche foto sulla strada dove andavo a piegare in moto durante i weekend. La gente che già mi conosceva iniziò a chiedermi foto e per passaparola mi sono ritrovato lassù per quasi 3 anni quasi ogni weekend a scattare ai motociclisti."
+          path="/images/photo_page/motori/IMG_3481.jpg"
+        />
+        <PhotoArguments
+          title="Urbex"
+          desc="Esplorare edifici abbandonati, bloccati nel tempo e cercare di riportare per qualche istante i rumori di luoghi una volta piene di vita ma ormai vuote. Condivido questa passione con un mio amico."
+          path="/images/photo_page/urbex/IMG_0793.jpg"
+        />
+      </div>
+    </div>
 
-              <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                <h3 class="text-lg sm:text-xl md:text-2xl font-semibold text-white">
-                  {photo.title}
-                </h3>
-              </div>
-
-              <div class="absolute inset-0 border-2 border-white/0 group-hover:border-white/20 transition-all duration-300 rounded-lg" />
-            </div>
-          ))
+    <style>
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
         }
-      </div>
-    </div>
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-    <div class="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
-      <div
-        class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.03),transparent_70%)]"
-      >
-      </div>
+      .animate-fade-in {
+        animation: fade-in 1s ease-out;
+      }
 
-      <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">
-          Raccontare attraverso le immagini
-        </h2>
-        <p class="text-base sm:text-lg text-neutral-400 leading-relaxed mb-8">
-          Ogni fotografia è un frammento di tempo cristallizzato, un'emozione
-          congelata in un istante. Attraverso l'obiettivo cerco di catturare non
-          solo ciò che vedo, ma ciò che sento, trasformando la luce in memoria e
-          il silenzio in racconto.
-        </p>
-      </div>
-    </div>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
   </div>
-
-  <style>
-    @keyframes fade-in {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .animate-fade-in {
-      animation: fade-in 1s ease-out;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
 </Layout>
