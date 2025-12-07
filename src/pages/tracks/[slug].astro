@@ -1,0 +1,26 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+import fs from "node:fs";
+import { tracks } from "../../data/tracks.js";
+
+
+export function getStaticPaths() {
+  return tracks.map((track) => ({
+    params: { slug: track.slug },
+    props: { track },
+  }));
+}
+
+const { track } = Astro.props;
+const link = "./src/assets/tabs/" + track.file;
+
+const tab = fs.readFileSync(link, "utf8");
+
+---
+
+<Layout>
+  <div class="">
+    <p class="">{track.title}</p>
+    <pre class="font-bold p-4">{tab}</pre>
+  </div></Layout>

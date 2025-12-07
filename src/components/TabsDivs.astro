@@ -1,0 +1,11 @@
+---
+import type { GetStaticPaths } from "astro";
+const { song, slug} = Astro.props;
+
+---
+
+<a href={`/tracks/${slug}`}>
+  <div class="">
+    <pre>{song}</pre>
+  </div>
+</a>

@@ -5,6 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import Concerts from "../components/Concerts.astro";
 import BTTB from "../components/BTTB.astro";
 import type { Post } from "../lib/types";
+import TabsDivs from "../components/TabsDivs.astro";
 
 const posts = Object.values(
   import.meta.glob("./posts/music/*.md", { eager: true })
@@ -70,6 +71,11 @@ const posts = Object.values(
         concerts, from wildly different artists, where I lived unique
         experiences and met spectacular people who opened my mind.
       </p>
+      <br />
+      <p class="text-2xl opacity-80 italic">Useful Tabs</p>
+      <div class="flex flex-row flex-wrap justify-around">
+        <TabsDivs song="Never There" slug="never_there" />
+      </div>
     </div>
     <section class="w-full max-w-5xl mt-4">
       <h2 class="text-3xl font-semibold italic text-center mb-6 opacity-90">
