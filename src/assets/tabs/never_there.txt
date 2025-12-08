@@ -1,5 +1,7 @@
-Accordatura: E A D G B ETonalità: BmCapotasto: senza capotasto
-G
+Accordatura: E A D G B E
+Tonalità: Bm
+Capotasto: senza capotasto
+
  
 [Intro]
 Bm G D A

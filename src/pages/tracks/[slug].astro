@@ -1,9 +1,9 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import "../../styles/global.css";
+
 import fs from "node:fs";
 import { tracks } from "../../data/tracks.js";
-
 
 export function getStaticPaths() {
   return tracks.map((track) => ({
@@ -16,11 +16,64 @@ const { track } = Astro.props;
 const link = "./src/assets/tabs/" + track.file;
 
 const tab = fs.readFileSync(link, "utf8");
-
+const speed = Number("{{ speed }}");
 ---
 
+<div class="fixed right-0">
+  <input
+    type="number"
+    name="pixels"
+    id="pixels"
+    value="1"
+    placeholder="Number of Pixels"
+    class="border-2"
+  />
+  <input
+    type="number"
+    name="interval"
+    id="interval"
+    value="150"
+    placeholder="Update Interval"
+    class="border-2"
+  />
+
+  <button id="autoScrollBtn"> Auto Scroll </button>
+</div>
 <Layout>
   <div class="">
     <p class="">{track.title}</p>
     <pre class="font-bold p-4">{tab}</pre>
-  </div></Layout>
+  </div></Layout
+>
+
+<script>
+  let interval: any = null;
+
+  function scrollStep() {
+    window.scrollBy(
+      0,
+      Number((document.getElementById("pixels") as HTMLInputElement).value)
+    );
+  }
+  document.getElementById("autoScrollBtn")!.addEventListener("click", () => {
+    if (!interval) {
+      interval = setInterval(
+        scrollStep,
+        Number((document.getElementById("interval") as HTMLInputElement).value)
+      );
+    } else {
+      clearInterval(interval);
+      interval = null;
+    }
+  });
+</script>
+<style>
+  #autoScrollBtn {
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+</style>

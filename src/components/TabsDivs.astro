@@ -4,8 +4,8 @@ const { song, slug} = Astro.props;
 
 ---
 
-<a href={`/tracks/${slug}`}>
-  <div class="">
+<a href={`/tracks/${slug}`} class="p-5">
+  <div class="p-5 border-2">
     <pre>{song}</pre>
   </div>
 </a>

@@ -1,0 +1,62 @@
+Accordatura: E A D G B E
+Tonalità: F
+Capotasto: senza capotasto
+
+[Intro]
+F Am G F
+ 
+[Verse]
+F        Am
+  I woke alone today
+G                         F
+  For all the birds have flown
+F             Am
+  Inside this empty house
+G                       F
+  Which no longer feels like home
+ 
+[Chorus]
+C       Am
+  No angel of mercy
+F          C
+  Is gonna hear my call (lord no)
+C       Am
+  No angel of mercy
+F                       Dm
+  To dry the tears that shall not fall
+ 
+[Verse]
+F        Am
+  I woke alone today
+G                               F
+  Admidst life's killing fields of war
+F      Am
+  Door of memories
+G           F
+  Closed forevermore
+ 
+[Verse]
+C       Am
+  No angel of mercy
+F          C
+  Is gonna hear my call (lord no)
+C       Am
+  No angel of mercy
+F                       Dm
+  To dry the tears that shall not fall
+ 
+[Instrumental]
+Am F Dsus2 Am F Dsus2 Am F Dsus2 Am F Dsus2
+ 
+[Solo]
+Am G F
+ 
+[Chorus]
+C       Am
+  No angel of mercy
+F          C
+  Is gonna hear my call (lord no)
+C       Am
+  No angel of mercy
+F                       C  (in the final chorus it's Dm)
+  To dry the tears that shall not fall

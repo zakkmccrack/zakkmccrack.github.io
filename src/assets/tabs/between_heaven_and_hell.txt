@@ -1,0 +1,90 @@
+Accordatura: E A D G B E
+Capotasto: senza capotasto
+
+[Chords]
+G     : 320033
+Em    : 022000
+FM7   : 133200 (Fmaj7#11)
+Cadd9 : x30010
+Dsus4 : xx0233
+ 
+[Intro]
+G  Em  FM7  FM7   |
+G  Em  FM7  Cadd9 | x2
+ 
+[Verse 1]
+G         Em           FM7     FM7
+ Dying to live, living to die
+G            Em        FM7             Cadd9
+ Ain't no hellos here, nothing but goodbye
+G                    Em               FM7      FM7
+ It's like singing a song that cannot be sung
+G                    Em                FM7           Cadd9
+ It's like having to end child, what's yet to have begun, Lord
+ 
+[Chorus]
+G -   Dsus4  -  Cadd9
+ Hey, hey, hey now
+        G -           Dsus4 -  Cadd9
+Where I am at times I just can't tell
+G -   Dsus4 - Cadd9
+ Hey, hey, hey, now
+    Cadd9 let ring   (Cadd9) (Cadd9)
+I'm lost somewhere Between Heaven and Hell
+ 
+G  Em  FM7  FM7
+G  Em  FM7  Cadd9
+ 
+[Verse 2]
+G             Em                FM7       FM7
+ All that you know and all that you knew
+G       Em                 FM7                   Cadd9
+ In the end child, tell me what's it all mean to you?
+G                 Em                FM7     FM7
+Don't forget just who and where you are
+G                    Em            FM7                  Cadd9
+ You can spread your wings son but don't you spread yourself too far
+ 
+[Chorus]
+G -   Dsus4  -  Cadd9
+ Hey, hey, hey now
+        G -           Dsus4 -  Cadd9
+Where I am at times I just can't tell
+G -   Dsus4 - Cadd9
+ Hey, hey, hey, now
+    Cadd9 let ring   (Cadd9) (Cadd9)
+I'm lost somewhere Between Heaven and Hell
+ 
+G  Em  FM7  FM7
+G  Em  FM7  Cadd9
+ 
+[Solo]
+G  Em  FM7  FM7    |
+G  Em  FM7  Cadd9  | x2
+ 
+[Chorus]
+G -   Dsus4  -  Cadd9
+ Hey, hey, hey now
+        G -           Dsus4 -  Cadd9
+Where I am at times I just can't tell
+G -   Dsus4 - Cadd9
+ Hey, hey, hey, now
+    Cadd9                             Cadd9
+I'm lost somewhere Between Heaven and Hell
+G -   Dsus4  -  Cadd9
+ Hey, hey, hey now
+        G -           Dsus4 -  Cadd9
+Where I am at times I just can't tell
+G -   Dsus4 - Cadd9
+ Hey, hey, hey, now
+    Cadd9 let ring   (Cadd9) (Cadd9)
+I'm lost somewhere Between Heaven and Hell
+ 
+[Outro]
+ 
+e|---------------------------|     |--3----------|
+B|---------------------------|     |--1---0------|
+G|-----0-----0-------0-----0-| x3, |--0-------0--|
+D|------0-----0-------0---0--|     |--0----------|
+A|-------0-------------0^2---|     |--2----------|
+E|--1-------2----3-----------|     |--3----------|
