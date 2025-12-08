@@ -16,38 +16,71 @@ const { track } = Astro.props;
 const link = "./src/assets/tabs/" + track.file;
 
 const tab = fs.readFileSync(link, "utf8");
-const speed = Number("{{ speed }}");
 ---
 
-<div class="fixed right-0">
-  <input
-    type="number"
-    name="pixels"
-    id="pixels"
-    value="1"
-    placeholder="Number of Pixels"
-    class="border-2"
-  />
-  <input
-    type="number"
-    name="interval"
-    id="interval"
-    value="150"
-    placeholder="Update Interval"
-    class="border-2"
-  />
-
-  <button id="autoScrollBtn"> Auto Scroll </button>
-</div>
 <Layout>
-  <div class="">
-    <p class="">{track.title}</p>
-    <pre class="font-bold p-4">{tab}</pre>
-  </div></Layout
->
+  <div class="min-h-screen bg-neutral-950 text-neutral-100">
+    <div
+      class="fixed top-0 left-0 right-0 bg-neutral-950/95 backdrop-blur-sm border-b border-neutral-800 z-10"
+    >
+      <div class="max-w-4xl mx-auto px-6 py-4">
+        <h1 class="text-xl font-light tracking-wide">{track.title}</h1>
+      </div>
+    </div>
+
+    <div class="fixed bottom-6 right-6 flex flex-col gap-2 z-20">
+      <div
+        class="bg-neutral-900/90 backdrop-blur-sm border border-neutral-800 rounded-lg p-4 flex flex-col gap-3"
+      >
+        <div class="flex items-center gap-3">
+          <label for="pixels" class="text-sm text-neutral-400 min-w-[60px]"
+            >Speed</label
+          >
+          <input
+            type="number"
+            id="pixels"
+            value="1"
+            min="1"
+            max="10"
+            class="w-16 bg-neutral-800 border border-neutral-700 rounded px-2 py-1 text-sm focus:outline-none focus:border-neutral-500"
+          />
+        </div>
+
+        <div class="flex items-center gap-3">
+          <label for="interval" class="text-sm text-neutral-400 min-w-[60px]"
+            >Delay</label
+          >
+          <input
+            type="number"
+            id="interval"
+            value="150"
+            min="50"
+            max="500"
+            step="10"
+            class="w-16 bg-neutral-800 border border-neutral-700 rounded px-2 py-1 text-sm focus:outline-none focus:border-neutral-500"
+          />
+        </div>
+      </div>
+
+      <button
+        id="autoScrollBtn"
+        class="bg-neutral-100 hover:bg-white text-neutral-950 font-medium px-6 py-3 rounded-lg transition-all duration-200 hover:shadow-lg"
+      >
+        <span id="btnText">Start Scroll</span>
+      </button>
+    </div>
+
+    <div class="max-w-fit pr-5 pt-24 pb-32 md:pl-30">
+      <pre
+        class="font-mono text-sm text-wrap text-neutral-300 overflow-x-auto">{tab}</pre>
+    </div>
+  </div>
+</Layout>
 
 <script>
   let interval: any = null;
+  const btn = document.getElementById("autoScrollBtn")!;
+  const btnText = document.getElementById("btnText")!;
 
   function scrollStep() {
     window.scrollBy(
@@ -55,25 +88,22 @@ const speed = Number("{{ speed }}");
       Number((document.getElementById("pixels") as HTMLInputElement).value)
     );
   }
-  document.getElementById("autoScrollBtn")!.addEventListener("click", () => {
+
+  btn.addEventListener("click", () => {
     if (!interval) {
       interval = setInterval(
         scrollStep,
         Number((document.getElementById("interval") as HTMLInputElement).value)
       );
+      btnText.textContent = "Stop Scroll";
+      btn.classList.remove("bg-neutral-100", "hover:bg-white");
+      btn.classList.add("bg-red-500", "hover:bg-red-600", "text-white");
     } else {
       clearInterval(interval);
       interval = null;
+      btnText.textContent = "Start Scroll";
+      btn.classList.remove("bg-red-500", "hover:bg-red-600", "text-white");
+      btn.classList.add("bg-neutral-100", "hover:bg-white", "text-neutral-950");
     }
   });
 </script>
-<style>
-  #autoScrollBtn {
-    padding: 0.7rem 1.2rem;
-    border-radius: 8px;
-    background: #3b82f6;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-</style>

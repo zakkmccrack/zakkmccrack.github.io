@@ -73,7 +73,8 @@ const posts = Object.values(
       </p>
       <br />
       <p class="text-2xl opacity-80 italic">Useful Tabs</p>
-      <div class="flex flex-row flex-wrap justify-around items-center">
+      <button id="mostra"> mostra</button>
+      <div id="tabDiv" class="grid-cols-1 md:grid-cols-3 justify-around">
         <TabsDivs song="Never There" slug="never_there" />
         <TabsDivs song="So Long Goodbye" slug="so_long_goodbye" />
         <TabsDivs song="Remembering Sunday" slug="remembering_sunday" />
@@ -285,4 +286,20 @@ const posts = Object.values(
       </div>
     </div>
   </div>
+  <script>
+    const btn = document.getElementById("mostra")!;
+    const tabDiv = document.getElementById("tabDiv")!;
+    let visible = false;
+    //tabDiv.classList.toggle("hidden");
+
+    btn.addEventListener("click", () => {
+      if (!visible) {
+        tabDiv.classList.toggle("grid");
+        visible = true;
+      } else {
+        tabDiv.classList.toggle("hidden");
+        visible = false;
+      }
+    });
+  </script>
 </Layout>
