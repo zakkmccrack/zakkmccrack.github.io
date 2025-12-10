@@ -227,4 +227,10 @@ export const tracks = [
     band: "Naska",
     file: "rebel.txt",
   },
+  {
+    slug: "higher",
+    title: "Higher",
+    band: "Creed",
+    file: "higher.txt",
+  },
 ];
