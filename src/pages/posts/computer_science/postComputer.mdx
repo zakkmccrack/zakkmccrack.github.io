@@ -12,14 +12,14 @@ Qualche mese fa ero fuori casa, connesso al mio hotspot mobile e stavo studiando
 Nel mentre che dal portale per il materiale didattico della mia università switchavo i file degli appunti trovavo estremamente snervante il fatto che ogni singola pagina, nonostante cache e rete ci metteva numerosi secondi a caricarsi.
 Posso capire siti come youtube o reddit, ma un sito dal quale prendere documenti per studiare quanti file in background deve caricare oltre alla pagina principale?!
 Tornato a casa, prendo burpsuite e mi metto a dare un'occhiata a quali richieste avvengono:
-<PostImage src="/src/pages/posts/computer_science/unipgWrapper/loginPageRequests.png" variant="normal"/>
+<PostImage src="../../public/images/unipgWrapper/coursePageRequest.png" variant="normal"/>
 Solo nella prima pagina dopo aver fatto il login abbiamo 17 richieste. Una POST iniziale fatta da me e tutte le altre sono interne, per il servizio di login ma soprattutto per numerosi file di dimensioni notevoli che appesantiscono la rete.
 Una volta dentro il portale, quando accediamo ad un corso le richieste effettuate sono le seguenti:
-<PostImage src="/src/pages/posts/computer_science/unipgWrapper/coursePageRequest.png" variant="normal"/>
+<PostImage src="../../public/images/unipgWrapper/coursePageRequest.png" variant="normal"/>
 29 richieste.
 Per carità, un totale di quasi 50 richieste sono poche se consideriamo che un accesso alla home di youtube senza account sono circa 200.
 Ma comunuqe, mi rompeva le scatole che per vedere i documenti dell'università, non avendo una rete super veloce, una pagina in media mi ci mette dai 2 ai 4 secondi a caricare con picchi fino a 7 secondi.
-<PostImage src="/src/pages/posts/computer_science/unipgWrapper/timeLoaded.png" variant="normal"/>
+<PostImage src="../../public/images/unipgWrapper/timeLoaded.png" variant="normal"/>
 
 Quindi invece di finire di studiare ho deciso di prendere il mio peggior nemico (python) e di  scrivere un wrapper da terminale con lo scopo di velocizzare l'accesso su reti per gente che come me non ha la fibra o vive in mezzo al nulla.
 
@@ -211,8 +211,8 @@ Questi sono i punti critici fondamentali del progetto, tutto il resto sono sempl
 Dopo tutta questa pantomima però, abbiamo effettivamente riscontrato dei miglioramenti nei tempi delle richieste?
 Analizziamo la prima richiesta del login per entrare nella home:
 
-<PostImage src="/src/pages/posts/computer_science/unipgWrapper/websiteTime.png" variant="normal"/>
-<PostImage src="/src/pages/posts/computer_science/unipgWrapper/terminalTime.png" variant="normal"/>
+<PostImage src="../../public/images/unipgWrapper/websiteTime.png" variant="normal"/>
+<PostImage src="../../public/images/unipgWrapper/terminalTime.png" variant="normal"/>
 
 Nel programma da terminale abbiamo un tempo medio (per 10 esecuzioni di richieste) di 0.4 secondi con minima di 0.3 e massima 0.4 (arrotondati).
 In una navigazione normale il tempo è di oltre 2.5 secondi con ben 37 richieste fatte.
