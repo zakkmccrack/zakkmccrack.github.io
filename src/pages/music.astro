@@ -8,7 +8,7 @@ import type { Post } from "../lib/types";
 import TabsDivs from "../components/TabsDivs.astro";
 
 const posts = Object.values(
-  import.meta.glob("./posts/music/*.md", { eager: true })
+  import.meta.glob("./posts/music/*.md", { eager: true }),
 ) as unknown as Post[];
 ---
 
@@ -74,7 +74,7 @@ const posts = Object.values(
       <br />
       <p class="text-2xl opacity-80 italic">Useful Tabs</p>
       <button id="mostra"> mostra</button>
-      <div id="tabDiv" class="grid-cols-1 md:grid-cols-3 justify-around">
+      <div id="tabDiv" class="grid-cols-1 md:grid-cols-3 hidden justify-around">
         <TabsDivs song="Never There" slug="never_there" />
         <TabsDivs song="So Long Goodbye" slug="so_long_goodbye" />
         <TabsDivs song="Remembering Sunday" slug="remembering_sunday" />
@@ -285,6 +285,16 @@ const posts = Object.values(
           bands={["GattoToro"]}
           style="bg-gradient-to-tr from-orange-600 via-purple-600 to-black"
         />
+        <Concerts
+          title="21/11/2025 — Urban"
+          bands={[
+            "Lemenua",
+            "Elephant brain",
+            "Giorgio canali",
+            "fast animals and slow kids",
+          ]}
+          style="bg-gradient-to-tr from-blue-600 via-cyan-600 to-red-400"
+        />
       </div>
     </div>
   </div>
@@ -295,13 +305,7 @@ const posts = Object.values(
     //tabDiv.classList.toggle("hidden");
 
     btn.addEventListener("click", () => {
-      if (!visible) {
-        tabDiv.classList.toggle("grid");
-        visible = true;
-      } else {
         tabDiv.classList.toggle("hidden");
-        visible = false;
-      }
     });
   </script>
 </Layout>

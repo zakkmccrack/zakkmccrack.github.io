@@ -5,7 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import type { Post } from "../lib/types";
 
 const posts = Object.values(
-  import.meta.glob("./posts/computer_science/*.md", { eager: true })
+  import.meta.glob("./posts/computer_science/*.mdx", { eager: true })
 ) as unknown as Post[];
 ---
 
