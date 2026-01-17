@@ -15,7 +15,7 @@ export const tracks = [
     slug: "simple_man",
     title: "Simple Man",
     band: "Lynyrd Skynyrd ",
-    file: "remembering_sunday.txt",
+    file: "simple_man.txt",
   },
   {
     slug: "remembering_sunday",
@@ -232,5 +232,47 @@ export const tracks = [
     title: "Higher",
     band: "Creed",
     file: "higher.txt",
+  },
+  {
+    slug: "december",
+    title: "December",
+    band: "Neck Deep",
+    file: "december.txt",
+  },
+  {
+    slug: "wish_you_were_here",
+    title: "Wish you were here",
+    band: "Pink Floyd",
+    file: "wish_you_were_here.txt",
+  },
+  {
+    slug: "all_by_myself",
+    title: "All By Myself",
+    band: "Green Day",
+    file: "all_by_myself.txt",
+  },
+  {
+    slug: "fischia_il_vento",
+    title: "Fischia il Vento",
+    band: "Modena City Ramblers",
+    file: "fischia_il_vento.txt",
+  },
+  {
+    slug: "i_ribelli_della_montagna",
+    title: "I riblelli della Montagna",
+    band: "Modena City Ramblers",
+    file: "i_ribelli_della_montagna.txt",
+  },
+  {
+    slug: "black_sabbath",
+    title: "Black Sabbath",
+    band: "Black Sabbath",
+    file: "black_sabbath.txt",
+  },
+  {
+    slug: "holiday",
+    title: "Holiday",
+    band: "Green Day",
+    file: "holiday.txt",
   },
 ];
