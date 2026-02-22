@@ -1,0 +1,25 @@
+---
+import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
+import Book from "../components/book.astro";
+---
+
+<Layout>
+  <div
+    class="bg-linear-to-br from-[#111111] to-[#333] min-h-screen selection:text-black selection:bg-white w-full h-fit flex flex-col justify-around items-center text-center"
+  >
+    <div class="pt-20 pb-10 font-mono font-black text-white">
+      <div class="text-5xl">|My Bookshelf|</div>
+    </div>
+    <div
+      class="flex flex-row flex-wrap justify-center p-10 items-center w-full h-full"
+    >
+      <Book title="1984" img="/images/covers/1984.png" />
+      <Book title="fahrenheit 451" img="/images/covers/451.png" />
+      <Book title="fahrenheit 451" img="/images/covers/lo_straniero.png" />
+      <Book title="fahrenheit 451" img="/images/covers/path.png" />
+      <Book title="fahrenheit 451" img="/images/covers/cirano.png" />
+      <Book title="fahrenheit 451" img="/images/covers/metodo_cartesio.png" />
+    </div>
+  </div>
+</Layout>

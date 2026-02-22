@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import "../../styles/global.css";
 
 import fs from "node:fs";
-import { tracks } from "../../data/tracks.js";
+import { tracks } from "../../data/tracks.json";
 
 export function getStaticPaths() {
   return tracks.map((track) => ({

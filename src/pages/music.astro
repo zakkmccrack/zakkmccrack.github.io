@@ -7,9 +7,14 @@ import BTTB from "../components/BTTB.astro";
 import type { Post } from "../lib/types";
 import TabsDivs from "../components/TabsDivs.astro";
 
+import data from "./../../src/data/tracks.json" assert { type: "json" };
 const posts = Object.values(
   import.meta.glob("./posts/music/*.md", { eager: true }),
 ) as unknown as Post[];
+
+let tracks = new Map(Object.entries(data));
+tracks = new Map([...tracks.entries()].sort());
+console.log(tracks.size);
 ---
 
 <Layout>
@@ -71,104 +76,6 @@ const posts = Object.values(
         concerts, from wildly different artists, where I lived unique
         experiences and met spectacular people who opened my mind.
       </p>
-      <br />
-      <p class="text-2xl opacity-80 italic">Useful Tabs</p>
-      <button id="mostra"> mostra</button>
-      <div id="tabDiv" class="grid-cols-1 md:grid-cols-3 hidden justify-around">
-        <TabsDivs song="December" slug="december" />
-
-        <TabsDivs song="Wish you were here" slug="wish_you_were_here" />
-
-        <TabsDivs song="All By Myself" slug="all_by_myself" />
-
-        <TabsDivs song="Fischia il Vento" slug="fischia_il_vento" />
-
-        <TabsDivs
-          song="I riblelli della Montagna"
-          slug="i_ribelli_della_montagna"
-        />
-
-        <TabsDivs song="Black Sabbath" slug="black_sabbath" />
-
-        <TabsDivs song="Holiday" slug="holiday" />
-
-        <TabsDivs song="Never There" slug="never_there" />
-        <TabsDivs song="So Long Goodbye" slug="so_long_goodbye" />
-        <TabsDivs song="Remembering Sunday" slug="remembering_sunday" />
-        <TabsDivs
-          song="If It Means A Lot To You"
-          slug="if_it_means_a_lot_to_you"
-        />
-        <TabsDivs song="Vaffanculo Per Sempre" slug="vaffanculo_per_sempre" />
-        <TabsDivs song="I'm Yours" slug="im_yours" />
-        <TabsDivs song="Forever Yours" slug="forever_yours" />
-        <TabsDivs song="Seasons" slug="seasons" />
-        <TabsDivs
-          song="Questo Mondo Non Mi Renderà Cattivo"
-          slug="questo_mondo_non_mi_rendera_cattivo"
-        />
-        <TabsDivs song="Higher" slug="higher" />
-
-        <TabsDivs song="My Heart I Surrender" slug="my_heart_i_surrender" />
-        <TabsDivs
-          song="Between Heaven and Hell"
-          slug="between_heaven_and_hell"
-        />
-        <TabsDivs song="Peace of Mind" slug="peace_of_mind" />
-        <TabsDivs song="Behind Blue Eyes" slug="behind_blue_eyes" />
-        <TabsDivs song="Fottuta Canzone" slug="fottuta_canzone" />
-        <TabsDivs song="Guerra e Pace" slug="guerra_e_pace" />
-        <TabsDivs song="Spifferi" slug="spifferi" />
-        <TabsDivs song="Destri" slug="destri" />
-        <TabsDivs song="Welcome to My Life" slug="welcome_to_my_life" />
-        <TabsDivs
-          song="Boulevard of Broken Dreams"
-          slug="boulevard_of_broken_dreams"
-        />
-        <TabsDivs song="Way Beyond Empty" slug="way_beyond_empty" />
-        <TabsDivs song="The Things You Do" slug="the_things_you_do" />
-        <TabsDivs song="Tears Over Beers" slug="tears_over_beers" />
-        <TabsDivs
-          song="In un Giorno di Pioggia"
-          slug="in_un_giorno_di_pioggia"
-        />
-        <TabsDivs
-          song="Black Gives Way to Blue"
-          slug="black_gives_way_to_blue"
-        />
-        <TabsDivs song="Angel of Mercy" slug="angel_of_mercy" />
-        <TabsDivs song="In Bloom" slug="in_bloom" />
-        <TabsDivs song="Torn" slug="torn" />
-        <TabsDivs song="Simple Man" slug="simple_man" />
-
-        <TabsDivs
-          song="Kristy, Are You Doing Okay?"
-          slug="kristy_are_you_doing_okay"
-        />
-        <TabsDivs
-          song="I Can't Afford to Miss You in This Economy"
-          slug="i_cant_afford_to_miss_you_in_this_economy"
-        />
-        <TabsDivs song="Canada" slug="canada" />
-        <TabsDivs song="La Città" slug="la_citta" />
-        <TabsDivs
-          song="The Middle (Acoustic Version)"
-          slug="the_middle_acoustic"
-        />
-        <TabsDivs
-          song="Bored to Death (Acoustic)"
-          slug="bored_to_death_acoustic"
-        />
-        <TabsDivs
-          song="Tears Don't Fall (Acoustic)"
-          slug="tears_dont_fall_acoustic"
-        />
-        <TabsDivs
-          song="The Blessed Hellride (Acoustic)"
-          slug="the_blessed_hellride_acoustic"
-        />
-        <TabsDivs song="Rebel" slug="rebel" />
-      </div>
     </div>
     <section class="w-full max-w-5xl mt-4">
       <h2 class="text-3xl font-semibold italic text-center mb-6 opacity-90">
@@ -190,7 +97,9 @@ const posts = Object.values(
     </section>
 
     <div class="w-full">
-      <p class="text-2xl opacity-80 italic text-center pb-5">My experiences</p>
+      <p class="text-3xl font-semibold opacity-80 italic text-center pb-15">
+        My experiences
+      </p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5 w-full">
         <BTTB
           title="Back to the Beginning 2025"
@@ -319,15 +228,116 @@ const posts = Object.values(
         />
       </div>
     </div>
-  </div>
-  <script>
-    const btn = document.getElementById("mostra")!;
-    const tabDiv = document.getElementById("tabDiv")!;
-    let visible = false;
-    //tabDiv.classList.toggle("hidden");
 
-    btn.addEventListener("click", () => {
-      tabDiv.classList.toggle("hidden");
-    });
-  </script>
+    <div class="pb-50 w-full text-center">
+      <p class="text-2xl opacity-80 italic">Useful Tabs</p>
+      <div id="tabDiv" class="grid grid-cols-1 md:grid-cols-3 justify-around">
+        <p>cacaa</p>
+        {
+          tracks.forEach((element) => (
+            console.log(element)
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- <div class="pb-50 w-full text-center">
+      <p class="text-2xl opacity-80 italic">Useful Tabs</p>
+      <div id="tabDiv" class="grid grid-cols-1 md:grid-cols-3 justify-around">
+        <TabsDivs song="December" slug="december" />
+
+        <TabsDivs song="Wish you were here" slug="wish_you_were_here" />
+
+        <TabsDivs song="All By Myself" slug="all_by_myself" />
+
+        <TabsDivs song="Fischia il Vento" slug="fischia_il_vento" />
+
+        <TabsDivs
+          song="I riblelli della Montagna"
+          slug="i_ribelli_della_montagna"
+        />
+
+        <TabsDivs song="Black Sabbath" slug="black_sabbath" />
+
+        <TabsDivs song="Holiday" slug="holiday" />
+
+        <TabsDivs song="Never There" slug="never_there" />
+        <TabsDivs song="So Long Goodbye" slug="so_long_goodbye" />
+        <TabsDivs song="Remembering Sunday" slug="remembering_sunday" />
+        <TabsDivs
+          song="If It Means A Lot To You"
+          slug="if_it_means_a_lot_to_you"
+        />
+        <TabsDivs song="Vaffanculo Per Sempre" slug="vaffanculo_per_sempre" />
+        <TabsDivs song="I'm Yours" slug="im_yours" />
+        <TabsDivs song="Forever Yours" slug="forever_yours" />
+        <TabsDivs song="Seasons" slug="seasons" />
+        <TabsDivs
+          song="Questo Mondo Non Mi Renderà Cattivo"
+          slug="questo_mondo_non_mi_rendera_cattivo"
+        />
+        <TabsDivs song="Higher" slug="higher" />
+
+        <TabsDivs song="My Heart I Surrender" slug="my_heart_i_surrender" />
+        <TabsDivs
+          song="Between Heaven and Hell"
+          slug="between_heaven_and_hell"
+        />
+        <TabsDivs song="Peace of Mind" slug="peace_of_mind" />
+        <TabsDivs song="Behind Blue Eyes" slug="behind_blue_eyes" />
+        <TabsDivs song="Fottuta Canzone" slug="fottuta_canzone" />
+        <TabsDivs song="Guerra e Pace" slug="guerra_e_pace" />
+        <TabsDivs song="Spifferi" slug="spifferi" />
+        <TabsDivs song="Destri" slug="destri" />
+        <TabsDivs song="Welcome to My Life" slug="welcome_to_my_life" />
+        <TabsDivs
+          song="Boulevard of Broken Dreams"
+          slug="boulevard_of_broken_dreams"
+        />
+        <TabsDivs song="Way Beyond Empty" slug="way_beyond_empty" />
+        <TabsDivs song="The Things You Do" slug="the_things_you_do" />
+        <TabsDivs song="Tears Over Beers" slug="tears_over_beers" />
+        <TabsDivs
+          song="In un Giorno di Pioggia"
+          slug="in_un_giorno_di_pioggia"
+        />
+        <TabsDivs
+          song="Black Gives Way to Blue"
+          slug="black_gives_way_to_blue"
+        />
+        <TabsDivs song="Angel of Mercy" slug="angel_of_mercy" />
+        <TabsDivs song="In Bloom" slug="in_bloom" />
+        <TabsDivs song="Torn" slug="torn" />
+        <TabsDivs song="Simple Man" slug="simple_man" />
+
+        <TabsDivs
+          song="Kristy, Are You Doing Okay?"
+          slug="kristy_are_you_doing_okay"
+        />
+        <TabsDivs
+          song="I Can't Afford to Miss You in This Economy"
+          slug="i_cant_afford_to_miss_you_in_this_economy"
+        />
+        <TabsDivs song="Canada" slug="canada" />
+        <TabsDivs song="La Città" slug="la_citta" />
+        <TabsDivs
+          song="The Middle (Acoustic Version)"
+          slug="the_middle_acoustic"
+        />
+        <TabsDivs
+          song="Bored to Death (Acoustic)"
+          slug="bored_to_death_acoustic"
+        />
+        <TabsDivs
+          song="Tears Don't Fall (Acoustic)"
+          slug="tears_dont_fall_acoustic"
+        />
+        <TabsDivs
+          song="The Blessed Hellride (Acoustic)"
+          slug="the_blessed_hellride_acoustic"
+        />
+        <TabsDivs song="Rebel" slug="rebel" />
+      </div>
+    </div>-->
+  </div>
 </Layout>
