@@ -2,7 +2,7 @@
   "name": "Zakk Site",
   "short_name": "zakk",
   "description": "Sito",
-  "start_url": "/",
+  "start_url": "/pages",
   "display": "standalone",
   "background_color": "#111111",
   "orientation": "portrait",
