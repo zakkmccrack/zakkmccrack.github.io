@@ -1,0 +1,23 @@
+---
+import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
+import TabsDivs from "../components/TabsDivs.astro";
+
+import data from "./../../src/data/tracks.json" assert { type: "json" };
+
+let tracks = new Map(Object.entries(data).sort());
+let array_tr = Array.from(tracks, ([title, data]) => ({ title, data }));
+---
+
+<Layout>
+  <div class="pb-50 w-full text-center text-white pt-11">
+    <p class="text-4xl opacity-80 italic pb-10">Useful Tabs</p>
+    <div id="tabDiv" class="grid grid-cols-1 md:grid-cols-4 justify-around">
+      {
+        array_tr.map(({ title, data }) => (
+          <TabsDivs song={title} slug={data.slug} />
+        ))
+      }
+    </div>
+  </div>
+</Layout>

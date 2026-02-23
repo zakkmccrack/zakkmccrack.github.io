@@ -274,5 +274,35 @@
     "title": "Holiday",
     "band": "Green Day",
     "file": "holiday.txt"
+  },
+  "Outer Wilds Main Title": {
+    "slug": "outer_wilds_main_title",
+    "title": "Outer Wilds Main Title",
+    "band": "Andrew Prahlow",
+    "file": "outer_wilds_main_title.txt"
+  },
+  "The Grouch": {
+    "slug": "the_grouch",
+    "title": "The Grouch",
+    "band": "Green Day",
+    "file": "the_grouch.txt"
+  },
+  "Just Another Face": {
+    "slug": "just_another_face",
+    "title": "Just Another Face",
+    "band": "Modern Baseball",
+    "file": "just_another_face.txt"
+  },
+  "Re-Do": {
+    "slug": "re-do",
+    "title": "Re-Do",
+    "band": "Modern Baseball",
+    "file": "re-do.txt"
+  },
+  "Farewell": {
+    "slug": "farewell",
+    "title": "Farewell",
+    "band": "Modern Baseball",
+    "file": "farewell.txt"
   }
 }
