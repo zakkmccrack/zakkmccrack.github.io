@@ -5,329 +5,230 @@ import Layout from "../layouts/Layout.astro";
 import Concerts from "../components/Concerts.astro";
 import BTTB from "../components/BTTB.astro";
 import type { Post } from "../lib/types";
-import TabsDivs from "../components/TabsDivs.astro";
 
 const posts = Object.values(
   import.meta.glob("./posts/music/*.md", { eager: true }),
 ) as unknown as Post[];
 ---
 
-<Layout>
-  <div
-    class="min-h-screen w-fit flex flex-col items-center justify-start bg-linear-to-br from-[#171717] to-[#2d2d2d] text-[#f2f2f2] p-4 gap-6 selection:text-black selection:bg-amber-300"
-  >
-    <div class="flex flex-col items-center gap-2">
-      <p class="text-5xl font-bold tracking-wide flex items-center gap-3">
-        Music
-      </p>
-    </div>
-
-    <div class="w-full text-lg leading-relaxed space-y-4 p-8 backdrop-blur-sm">
-      <p class="text-2xl opacity-80 italic">My story with music</p>
-      <p>
-        Music has always been my life's companion. The first songs I remember
-        listening to, on an old MP3 of my father's, were
-        <strong>Cup of Wonder</strong> by Jethro Tull, not ironically followed by
-        <strong>Crazy Horse</strong> by Black Label Society. Some time later I was
-        given <strong>American Idiot</strong> by Green Day and <strong
-          >Fear of The Dark</strong
-        > by Iron Maiden.
-      </p>
-
-      <p>
-        These two albums changed my life, making me feel the strength that music
-        can have on human beings. When I reached middle school, I realized that
-        what I thought was a personal vision of music was actually nearly
-        universal. This made me fall even more in love with music and pushed me
-        to understand its impact on the world and society throughout history.
-      </p>
-
-      <p>
-        For example, did you know that the September 11, 2001 attack, My
-        Chemical Romance, the release of <em>Twilight</em> and <em
-          >50 Shades of Gray</em
-        >, and even the deterioration of Ellen DeGeneres' public image are all
-        somehow connected?!
-      </p>
-
-      <p>
-        During lockdown in my second year of high school, after watching <em
-          >School of Rock</em
-        > for perhaps the fifth time, I decided to start a huge project based on the
-        genre map drawn on the classroom blackboard in the film. I wrote out the entire
-        evolution of almost all musical genres, from the earliest blues to the most
-        experimental genres of today.
-      </p>
-
-      <p>
-        For now this scheme exists only on paper—about twenty pages of a
-        notebook—but I'm working on making it digital and publishing it
-        somewhere.
-      </p>
-
-      <p>
-        For years I've continued nurturing this passion, discovering new artists
-        without prejudice toward genre or popularity. I've also been to many
-        concerts, from wildly different artists, where I lived unique
-        experiences and met spectacular people who opened my mind.
-      </p>
-      <br />
-      <p class="text-2xl opacity-80 italic">Useful Tabs</p>
-      <button id="mostra"> mostra</button>
-      <div id="tabDiv" class="grid-cols-1 md:grid-cols-3 hidden justify-around">
-        <TabsDivs song="December" slug="december" />
-
-        <TabsDivs song="Wish you were here" slug="wish_you_were_here" />
-
-        <TabsDivs song="All By Myself" slug="all_by_myself" />
-
-        <TabsDivs song="Fischia il Vento" slug="fischia_il_vento" />
-
-        <TabsDivs
-          song="I riblelli della Montagna"
-          slug="i_ribelli_della_montagna"
-        />
-
-        <TabsDivs song="Black Sabbath" slug="black_sabbath" />
-
-        <TabsDivs song="Holiday" slug="holiday" />
-
-        <TabsDivs song="Never There" slug="never_there" />
-        <TabsDivs song="So Long Goodbye" slug="so_long_goodbye" />
-        <TabsDivs song="Remembering Sunday" slug="remembering_sunday" />
-        <TabsDivs
-          song="If It Means A Lot To You"
-          slug="if_it_means_a_lot_to_you"
-        />
-        <TabsDivs song="Vaffanculo Per Sempre" slug="vaffanculo_per_sempre" />
-        <TabsDivs song="I'm Yours" slug="im_yours" />
-        <TabsDivs song="Forever Yours" slug="forever_yours" />
-        <TabsDivs song="Seasons" slug="seasons" />
-        <TabsDivs
-          song="Questo Mondo Non Mi Renderà Cattivo"
-          slug="questo_mondo_non_mi_rendera_cattivo"
-        />
-        <TabsDivs song="Higher" slug="higher" />
-
-        <TabsDivs song="My Heart I Surrender" slug="my_heart_i_surrender" />
-        <TabsDivs
-          song="Between Heaven and Hell"
-          slug="between_heaven_and_hell"
-        />
-        <TabsDivs song="Peace of Mind" slug="peace_of_mind" />
-        <TabsDivs song="Behind Blue Eyes" slug="behind_blue_eyes" />
-        <TabsDivs song="Fottuta Canzone" slug="fottuta_canzone" />
-        <TabsDivs song="Guerra e Pace" slug="guerra_e_pace" />
-        <TabsDivs song="Spifferi" slug="spifferi" />
-        <TabsDivs song="Destri" slug="destri" />
-        <TabsDivs song="Welcome to My Life" slug="welcome_to_my_life" />
-        <TabsDivs
-          song="Boulevard of Broken Dreams"
-          slug="boulevard_of_broken_dreams"
-        />
-        <TabsDivs song="Way Beyond Empty" slug="way_beyond_empty" />
-        <TabsDivs song="The Things You Do" slug="the_things_you_do" />
-        <TabsDivs song="Tears Over Beers" slug="tears_over_beers" />
-        <TabsDivs
-          song="In un Giorno di Pioggia"
-          slug="in_un_giorno_di_pioggia"
-        />
-        <TabsDivs
-          song="Black Gives Way to Blue"
-          slug="black_gives_way_to_blue"
-        />
-        <TabsDivs song="Angel of Mercy" slug="angel_of_mercy" />
-        <TabsDivs song="In Bloom" slug="in_bloom" />
-        <TabsDivs song="Torn" slug="torn" />
-        <TabsDivs song="Simple Man" slug="simple_man" />
-
-        <TabsDivs
-          song="Kristy, Are You Doing Okay?"
-          slug="kristy_are_you_doing_okay"
-        />
-        <TabsDivs
-          song="I Can't Afford to Miss You in This Economy"
-          slug="i_cant_afford_to_miss_you_in_this_economy"
-        />
-        <TabsDivs song="Canada" slug="canada" />
-        <TabsDivs song="La Città" slug="la_citta" />
-        <TabsDivs
-          song="The Middle (Acoustic Version)"
-          slug="the_middle_acoustic"
-        />
-        <TabsDivs
-          song="Bored to Death (Acoustic)"
-          slug="bored_to_death_acoustic"
-        />
-        <TabsDivs
-          song="Tears Don't Fall (Acoustic)"
-          slug="tears_dont_fall_acoustic"
-        />
-        <TabsDivs
-          song="The Blessed Hellride (Acoustic)"
-          slug="the_blessed_hellride_acoustic"
-        />
-        <TabsDivs song="Rebel" slug="rebel" />
+<div>
+  <Layout>
+    <div
+      class="min-h-screen w-fit flex flex-col items-center justify-start bg-linear-to-br from-[#171717] to-[#2d2d2d] text-[#f2f2f2] p-4 gap-6 selection:text-black selection:bg-amber-300"
+    >
+      <div class="flex flex-col items-center gap-2">
+        <p class="text-5xl font-bold tracking-wide flex items-center gap-3">
+          Music
+        </p>
       </div>
-    </div>
-    <section class="w-full max-w-5xl mt-4">
-      <h2 class="text-3xl font-semibold italic text-center mb-6 opacity-90">
-        Blog & Insights
-      </h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {
-          posts.map((post) => (
-            <a href={post.url}>
-              <div class="p-6 rounded-xl bg-white/5 backdrop-blur-lg shadow-md hover:shadow-2xl transition-shadow duration-300 cursor-pointer">
-                <h3 class="text-xl font-bold mb-2">{post.frontmatter.title}</h3>
-                <p class="text-sm opacity-75">{post.frontmatter.desc}</p>
-              </div>
-            </a>
-          ))
-        }
+      <div
+        class="w-full text-lg leading-relaxed space-y-4 p-8 backdrop-blur-sm"
+      >
+        <p class="text-2xl opacity-80 italic">My story with music</p>
+        <p>
+          Music has always been my life's companion. The first songs I remember
+          listening to, on an old MP3 of my father's, were
+          <strong>Cup of Wonder</strong> by Jethro Tull, not ironically followed by
+          <strong>Crazy Horse</strong> by Black Label Society. Some time later I was
+          given <strong>American Idiot</strong> by Green Day and <strong
+            >Fear of The Dark</strong
+          > by Iron Maiden.
+        </p>
+
+        <p>
+          These two albums changed my life, making me feel the strength that
+          music can have on human beings. When I reached middle school, I
+          realized that what I thought was a personal vision of music was
+          actually nearly universal. This made me fall even more in love with
+          music and pushed me to understand its impact on the world and society
+          throughout history.
+        </p>
+
+        <p>
+          For example, did you know that the September 11, 2001 attack, My
+          Chemical Romance, the release of <em>Twilight</em> and <em
+            >50 Shades of Gray</em
+          >, and even the deterioration of Ellen DeGeneres' public image are all
+          somehow connected?!
+        </p>
+
+        <p>
+          During lockdown in my second year of high school, after watching <em
+            >School of Rock</em
+          > for perhaps the fifth time, I decided to start a huge project based on
+          the genre map drawn on the classroom blackboard in the film. I wrote out
+          the entire evolution of almost all musical genres, from the earliest blues
+          to the most experimental genres of today.
+        </p>
+
+        <p>
+          For now this scheme exists only on paper—about twenty pages of a
+          notebook—but I'm working on making it digital and publishing it
+          somewhere.
+        </p>
+
+        <p>
+          For years I've continued nurturing this passion, discovering new
+          artists without prejudice toward genre or popularity. I've also been
+          to many concerts, from wildly different artists, where I lived unique
+          experiences and met spectacular people who opened my mind.
+        </p>
       </div>
-    </section>
+      <section class="w-full max-w-5xl mt-4">
+        <h2 class="text-3xl font-semibold italic text-center mb-6 opacity-90">
+          Blog & Insights
+        </h2>
 
-    <div class="w-full">
-      <p class="text-2xl opacity-80 italic text-center pb-5">My experiences</p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 w-full">
-        <BTTB
-          title="Back to the Beginning 2025"
-          bands={[
-            "Mastodont",
-            "Rival Sons",
-            "Halestorm",
-            "Tool",
-            "Slayer",
-            "Metallica",
-            "Guns N' Roses",
-            "Black Sabbath",
-            "Ozzy Osbourne",
-            "Pantera",
-            "Gojira",
-            "Alice In Chains",
-            "Lamb of God",
-            "Anthrax",
-          ]}
-          style="bg-gradient-to-tr from-black  to-purple-600 col-span-1 md:col-span-3"
-        />
-        <Concerts
-          title="Bay Fest 2019"
-          bands={["The Story So Far", "Dead Kennedys", "Offspring"]}
-          style="bg-gradient-to-r from-amber-300 via-orange-600 to-black"
-        />
-        <Concerts
-          title="Firenze Rock 2022"
-          bands={["Green Day", "Weezer"]}
-          style="bg-gradient-to-tr from-green-400 via-cyan-400 to-pink-400"
-        />
-        <Concerts
-          title="Does This Look All Killer No Filler Tour 2022"
-          bands={["Simple Plan", "Sum 41"]}
-          style="bg-gradient-to-tr from-yellow-400 via-red-600 to-black"
-        />
-        <Concerts
-          title="The Return of the Gods 2023"
-          bands={["Pantera e Zakk Wylde", "Kreation"]}
-          style="bg-gradient-to-tl from-slate-700 via-slate-700 to-red-500"
-        />
-        <Concerts
-          title="Cringe"
-          bands={["Rosa Chemical"]}
-          style="bg-gradient-to-tl from-pink-400 via-purple-500 to-black"
-        />
-        <Concerts
-          title="Milano 2024"
-          bands={["Set It Off", "I Prevail"]}
-          style="bg-gradient-to-tr from-red-500 via-black to-cyan-900"
-        />
-        <Concerts
-          title="I Days 2024"
-          bands={["Nothing But Thieves", "Green Day"]}
-          style="bg-gradient-to-tr from-green-400 via-neutral-900 to-black"
-        />
-        <Concerts
-          title="Fuck Your Clique 2024"
-          bands={["Siso", "Fuck Your Clique"]}
-          style="bg-gradient-to-tr from-green-400 via-neutral-900 to-black"
-        />
-        <Concerts
-          title="Firenze Rock 2025 — Day 1"
-          bands={[
-            "The Warning",
-            "Rival Sons",
-            "Falling In Reverse",
-            "Guns N' Roses",
-          ]}
-          style="bg-gradient-to-bl from-red-600 via-yellow-400 to-black"
-        />
-        <Concerts
-          title="Firenze Rock 2025 — Day 2"
-          bands={["Public Enemy", "Korn"]}
-          style="bg-gradient-to-tr from-slate-950 via-green-400 to-gray-600"
-        />
-        <Concerts
-          title="Firenze Rock 2025 — Day 3"
-          bands={["Shame", "Weezer", "Green Day"]}
-          style="bg-gradient-to-tr from-blue-400 via-green-400 to-yellow-400"
-        />
-        <Concerts
-          title="Cesena 2025"
-          bands={["Giorgio Canali", "The White Buffalo"]}
-          style="bg-gradient-to-tr from-orange-300 via-red-800 to-yellow-900"
-        />
-        <Concerts
-          title="Warehouse 2025"
-          bands={[
-            "Plants PLay",
-            "Neoprimitivi",
-            "Fuck Your Clique",
-            "Psicologi",
-          ]}
-          style="bg-gradient-to-tr from-purple-600 via-cyan-400 to-black"
-        />
-        <Concerts
-          title="11/10/2025"
-          bands={["Naska"]}
-          style="bg-gradient-to-tl from-red-700  to-black"
-        />
-        <Concerts
-          title="7/11/2025 — Urban"
-          bands={["Mezzosangue"]}
-          style="bg-gradient-to-tr from-red-800 via-black to-gray-800"
-        />
-        <Concerts
-          title="21/11/2025 — Urban"
-          bands={["GattoToro"]}
-          style="bg-gradient-to-tr from-orange-600 via-purple-600 to-black"
-        />
-        <Concerts
-          title="21/11/2025 — Urban"
-          bands={[
-            "Lemenua",
-            "Elephant brain",
-            "Giorgio canali",
-            "fast animals and slow kids",
-          ]}
-          style="bg-gradient-to-tr from-blue-600 via-cyan-600 to-red-400"
-        />
-        <Concerts
-          title="21/11/2025 — Dersena"
-          bands={["GattoToro"]}
-          style="bg-gradient-to-tr from-orange-600 via-purple-600 to-black"
-        />
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {
+            posts.map((post) => (
+              <a href={post.url}>
+                <div class="p-6 rounded-xl bg-white/5 backdrop-blur-lg shadow-md hover:shadow-2xl transition-shadow duration-300 cursor-pointer">
+                  <h3 class="text-xl font-bold mb-2">
+                    {post.frontmatter.title}
+                  </h3>
+                  <p class="text-sm opacity-75">{post.frontmatter.desc}</p>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+      </section>
+
+      <div class="w-full">
+        <p class="text-3xl font-semibold opacity-80 italic text-center pb-15">
+          My experiences
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 w-full">
+          <BTTB
+            title="Back to the Beginning 2025"
+            bands={[
+              "Mastodont",
+              "Rival Sons",
+              "Halestorm",
+              "Tool",
+              "Slayer",
+              "Metallica",
+              "Guns N' Roses",
+              "Black Sabbath",
+              "Ozzy Osbourne",
+              "Pantera",
+              "Gojira",
+              "Alice In Chains",
+              "Lamb of God",
+              "Anthrax",
+            ]}
+            style="bg-gradient-to-tr from-black  to-purple-600 col-span-1 md:col-span-3"
+          />
+          <Concerts
+            title="Bay Fest 2019"
+            bands={["The Story So Far", "Dead Kennedys", "Offspring"]}
+            style="bg-gradient-to-r from-amber-300 via-orange-600 to-black"
+          />
+          <Concerts
+            title="Firenze Rock 2022"
+            bands={["Green Day", "Weezer"]}
+            style="bg-gradient-to-tr from-green-400 via-cyan-400 to-pink-400"
+          />
+          <Concerts
+            title="Does This Look All Killer No Filler Tour 2022"
+            bands={["Simple Plan", "Sum 41"]}
+            style="bg-gradient-to-tr from-yellow-400 via-red-600 to-black"
+          />
+          <Concerts
+            title="The Return of the Gods 2023"
+            bands={["Pantera e Zakk Wylde", "Kreation"]}
+            style="bg-gradient-to-tl from-slate-700 via-slate-700 to-red-500"
+          />
+          <Concerts
+            title="Cringe"
+            bands={["Rosa Chemical"]}
+            style="bg-gradient-to-tl from-pink-400 via-purple-500 to-black"
+          />
+          <Concerts
+            title="Milano 2024"
+            bands={["Set It Off", "I Prevail"]}
+            style="bg-gradient-to-tr from-red-500 via-black to-cyan-900"
+          />
+          <Concerts
+            title="I Days 2024"
+            bands={["Nothing But Thieves", "Green Day"]}
+            style="bg-gradient-to-tr from-green-400 via-neutral-900 to-black"
+          />
+          <Concerts
+            title="Fuck Your Clique 2024"
+            bands={["Siso", "Fuck Your Clique"]}
+            style="bg-gradient-to-tr from-green-400 via-neutral-900 to-black"
+          />
+          <Concerts
+            title="Firenze Rock 2025 — Day 1"
+            bands={[
+              "The Warning",
+              "Rival Sons",
+              "Falling In Reverse",
+              "Guns N' Roses",
+            ]}
+            style="bg-gradient-to-bl from-red-600 via-yellow-400 to-black"
+          />
+          <Concerts
+            title="Firenze Rock 2025 — Day 2"
+            bands={["Public Enemy", "Korn"]}
+            style="bg-gradient-to-tr from-slate-950 via-green-400 to-gray-600"
+          />
+          <Concerts
+            title="Firenze Rock 2025 — Day 3"
+            bands={["Shame", "Weezer", "Green Day"]}
+            style="bg-gradient-to-tr from-blue-400 via-green-400 to-yellow-400"
+          />
+          <Concerts
+            title="Cesena 2025"
+            bands={["Giorgio Canali", "The White Buffalo"]}
+            style="bg-gradient-to-tr from-orange-300 via-red-800 to-yellow-900"
+          />
+          <Concerts
+            title="Warehouse 2025"
+            bands={[
+              "Plants PLay",
+              "Neoprimitivi",
+              "Fuck Your Clique",
+              "Psicologi",
+            ]}
+            style="bg-gradient-to-tr from-purple-600 via-cyan-400 to-black"
+          />
+          <Concerts
+            title="11/10/2025"
+            bands={["Naska"]}
+            style="bg-gradient-to-tl from-red-700  to-black"
+          />
+          <Concerts
+            title="7/11/2025 — Urban"
+            bands={["Mezzosangue"]}
+            style="bg-gradient-to-tr from-red-800 via-black to-gray-800"
+          />
+          <Concerts
+            title="21/11/2025 — Urban"
+            bands={["GattoToro"]}
+            style="bg-gradient-to-tr from-orange-600 via-purple-600 to-black"
+          />
+          <Concerts
+            title="21/11/2025 — Urban"
+            bands={[
+              "Lemenua",
+              "Elephant brain",
+              "Giorgio canali",
+              "fast animals and slow kids",
+            ]}
+            style="bg-gradient-to-tr from-blue-600 via-cyan-600 to-red-400"
+          />
+          <Concerts
+            title="21/11/2025 — Dersena"
+            bands={["GattoToro"]}
+            style="bg-gradient-to-tr from-orange-600 via-purple-600 to-black"
+          />
+        </div>
       </div>
-    </div>
-  </div>
-  <script>
-    const btn = document.getElementById("mostra")!;
-    const tabDiv = document.getElementById("tabDiv")!;
-    let visible = false;
-    //tabDiv.classList.toggle("hidden");
 
-    btn.addEventListener("click", () => {
-      tabDiv.classList.toggle("hidden");
-    });
-  </script>
-</Layout>
+    </div>
+  </Layout>
+</div>

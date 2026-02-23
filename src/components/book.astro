@@ -1,0 +1,20 @@
+---
+const { title, img } = Astro.props;
+---
+
+<div
+  class="w-fit h-fit border-8 border-l-0 border-r-0 border-amber-950 bg-amber-900 p-2"
+>
+  <div
+    class="flex flex-row justify-center gap-4 px-6 py-8
+              bg-linear-to-b from-amber-700 to-amber-800
+              shadow-[inset_0_0px_90px_rgba(0,0,0,0.6)]"
+  >
+    <div
+      class={`text-center p-8  w-2xs h-100 bg-cover bg-center shadow-2xl shadow-black  rounded-2xl border-8 hover:translate-x-15 transition-transform duration-450 overflow-hidden book`}
+      style={`background-image: url(${img});`}
+    >
+      <!-- <div class="text-amber-300 w-full bg-neutral-700">{title}</div> -->
+    </div>
+  </div>
+</div>

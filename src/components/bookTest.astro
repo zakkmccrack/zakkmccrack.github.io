@@ -1,0 +1,80 @@
+<!-- ---
+const { title, cover, img } = Astro.props;
+---
+
+<div class="flex-col flex-wrap">
+  <div class="w-fit h-fit" id={`${cover}`}>
+    <div
+      class={`text-center p-8 w-md h-100 rounded-2xl border-2 bg-[url(${img})] bg-contain bg-center shadow-2xl shadow-blue-900"`}
+      id={`${title}`}
+    >
+      <div class="text-amber-300">{`${cover}`}</div>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ title, cover}} is:inline>
+
+let books = document.getElementById("book");
+  let cover = document.getElementById("cover");
+
+  let targetX = 0;
+  let targetY = 0;
+
+  let currentX = 0;
+  let currentY = 0;
+  const rect = cover?.getBoundingClientRect();
+
+  if (books && cover && rect) {
+    cover?.addEventListener("mousemove", (e) => {
+      targetX = (e.offsetX - rect.width / 2) / rect.width;
+      targetY = (e.offsetY - rect.height / 2) / rect.height;
+      currentX = lerp(currentX, targetX, 0.1);
+      currentY = lerp(currentY, targetY, 0.1);
+      books.style.transform = `perspective(20px) rotateX(${-currentY}deg) rotateY(${currentX}deg)`;
+    });
+
+    function lerp(start: number, end: number, t: number) {
+      return start + (end - start) * t;
+    }
+
+    cover.addEventListener("mouseleave", () => {
+      currentX = 0;
+      currentY = 0;
+      books.style.transform = `perspective(7px) rotateX(${-currentY}deg) rotateY(${currentX}deg)`;
+    });
+  }
+  
+</script>
+
+<script>
+  let books = document.getElementById("book");
+  let cover = document.getElementById("cover");
+
+  let targetX = 0;
+  let targetY = 0;
+
+  let currentX = 0;
+  let currentY = 0;
+  const rect = cover?.getBoundingClientRect();
+
+  if (books && cover && rect) {
+    cover?.addEventListener("mousemove", (e) => {
+      targetX = (e.offsetX - rect.width / 2) / rect.width;
+      targetY = (e.offsetY - rect.height / 2) / rect.height;
+      currentX = lerp(currentX, targetX, 0.1);
+      currentY = lerp(currentY, targetY, 0.1);
+      books.style.transform = `perspective(20px) rotateX(${-currentY}deg) rotateY(${currentX}deg)`;
+    });
+
+    function lerp(start: number, end: number, t: number) {
+      return start + (end - start) * t;
+    }
+
+    cover.addEventListener("mouseleave", () => {
+      currentX = 0;
+      currentY = 0;
+      books.style.transform = `perspective(7px) rotateX(${-currentY}deg) rotateY(${currentX}deg)`;
+    });
+  }
+</script> -->

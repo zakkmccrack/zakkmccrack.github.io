@@ -3,23 +3,26 @@ import Layout from "../../layouts/Layout.astro";
 import "../../styles/global.css";
 
 import fs from "node:fs";
-import { tracks } from "../../data/tracks.js";
+import data from "./../../../src/data/tracks.json" assert { type: "json" };
 
 export function getStaticPaths() {
-  return tracks.map((track) => ({
-    params: { slug: track.slug },
+  let tracks = new Map(Object.entries(data).sort());
+  let array_tr = Array.from(tracks, ([title, data]) => ({ title, data }));
+
+  return array_tr.map((track) => ({
+    params: { slug: track.data.slug },
     props: { track },
   }));
 }
 
 const { track } = Astro.props;
-const link = "./src/assets/tabs/" + track.file;
+const link = "./src/assets/tabs/" + track.data.file;
 
 const tab = fs.readFileSync(link, "utf8");
 ---
 
 <Layout>
-  <div class="min-h-screen bg-neutral-950 text-neutral-100">
+  <div class="min-h-screen bg-neutral-900 text-white">
     <div
       class="fixed top-0 left-0 right-0 bg-neutral-950/95 backdrop-blur-sm border-b border-neutral-800 z-10"
     >
@@ -85,7 +88,7 @@ const tab = fs.readFileSync(link, "utf8");
   function scrollStep() {
     window.scrollBy(
       0,
-      Number((document.getElementById("pixels") as HTMLInputElement).value)
+      Number((document.getElementById("pixels") as HTMLInputElement).value),
     );
   }
 
@@ -93,7 +96,7 @@ const tab = fs.readFileSync(link, "utf8");
     if (!interval) {
       interval = setInterval(
         scrollStep,
-        Number((document.getElementById("interval") as HTMLInputElement).value)
+        Number((document.getElementById("interval") as HTMLInputElement).value),
       );
       btnText.textContent = "Stop Scroll";
       btn.classList.remove("bg-neutral-100", "hover:bg-white");
