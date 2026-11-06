@@ -33,7 +33,7 @@ const tab = fs.readFileSync(link, "utf8");
 
     <div class="fixed bottom-6 right-6 flex flex-col gap-2 z-20">
       <div
-        class="bg-neutral-900/90 backdrop-blur-sm border border-neutral-800 rounded-lg p-4 flex flex-col gap-3"
+        class="bg-neutral-900/90 backdrop-blur-sm border border-neutral-800  p-4 flex flex-col gap-3"
       >
         <div class="flex items-center gap-3">
           <label for="pixels" class="text-sm text-neutral-400 min-w-[60px]"
@@ -45,7 +45,7 @@ const tab = fs.readFileSync(link, "utf8");
             value="1"
             min="1"
             max="10"
-            class="w-16 bg-neutral-800 border border-neutral-700 rounded px-2 py-1 text-sm focus:outline-none focus:border-neutral-500"
+            class="w-16 bg-neutral-800 border border-neutral-700  px-2 py-1 text-sm focus:outline-none focus:border-neutral-500"
           />
         </div>
 
@@ -60,14 +60,14 @@ const tab = fs.readFileSync(link, "utf8");
             min="50"
             max="500"
             step="10"
-            class="w-16 bg-neutral-800 border border-neutral-700 rounded px-2 py-1 text-sm focus:outline-none focus:border-neutral-500"
+            class="w-16 bg-neutral-800 border border-neutral-700  px-2 py-1 text-sm focus:outline-none focus:border-neutral-500"
           />
         </div>
       </div>
 
       <button
         id="autoScrollBtn"
-        class="bg-neutral-100 hover:bg-white text-neutral-950 font-medium px-6 py-3 rounded-lg transition-all duration-200 hover:shadow-lg"
+        class="bg-neutral-100 hover:bg-white text-neutral-950 font-medium px-6 py-3  transition-all duration-200 hover:shadow-lg"
       >
         <span id="btnText">Start Scroll</span>
       </button>
